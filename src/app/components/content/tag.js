@@ -1,0 +1,66 @@
+"use client"
+
+import Image from 'next/image';
+import { useSearchParams } from 'next/navigation';
+import { useRouter } from 'next/navigation';
+
+
+export function Tag({ children, clickable = true, tags, setTags }) {
+    // массив с тегами, ?. нашлось или нет, если что выкидывает undefined вместо ошибки
+    let active = tags?.includes(children)
+
+    let searchParams = useSearchParams()
+    //если нашёл q, то добавить q, иначе пустая строка
+    let q = searchParams.get("q") ? "&q=" + searchParams.get("q") : ""
+    let router = useRouter()
+
+    return (
+        <div className={`
+        px-[12px] py-[6px] justify-center items-center flex select-none cursor-pointer leading-none
+        ${active ? "bg-black gap-[12px] text-white" : "border-solid border-black border-[2px] gap-[0px] text-black"}
+        `} onClick={() => {
+                if (clickable) { //если можно кликнуть
+                    if (!active) { // если тега в массиве нет
+                        tags.push(children) // то записать в основной
+                    } else { // иначе удалить (ещё один клик)
+                        // находит номер элемента, и с него удаляет
+                        tags.splice(tags.indexOf(children), 1)
+                    }
+                    setTags([...tags]) //обновляется массив
+                    //если в основном массиве что-то есть, то отправить в запрос выбранные теги
+                    // if (tags.length > 0) router.push("/search?tag=" + tags.join(",") + q)
+                    // else router.push("/search?" + q) //иначе в роутер просто запрос
+
+                    router.push("/search?tag=" + tags.join(",") + q)
+
+                }
+            }}>
+            <div className="Text text-[16px] font-custom font-bold leading-none">{children}</div>
+            <div className="Cross flex justify-center items-center">
+                {active && <Image
+                    src="/icons/cross_desktop.svg"
+                    height={10}
+                    width={10}
+                    alt="cross icon"
+                />}
+            </div>
+        </div>
+    )
+}
+
+export function BaseTag({ children }) {
+    return (
+        <div className="
+        px-[14px] pt-[10px] pb-[11px]
+        rounded-full justify-center items-center flex select-none
+        border-solid border-gray-200 border-[1px] gap-[0px] text-black
+        ">
+            <div className="Text text-[16px] font-custom font-medium leading-none">{children}</div>
+        </div>
+    )
+}
+
+
+
+
+

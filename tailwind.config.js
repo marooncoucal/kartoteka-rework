@@ -8,8 +8,15 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        'custom-black': '#111111',
+        'dark-grey': '#666666',
+        'custom-white': '#f0f0f0',
+      },
+      fontFamily: {
+        custom: ['Helios', 'sans-serif']
+      },
+      screens: {
+        'desktop': '1580px',
       },
     },
   },
