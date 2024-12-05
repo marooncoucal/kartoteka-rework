@@ -60,7 +60,7 @@ export default async function Page2({ params, searchParams }) {
     <div className="w-full pt-[6rem] md:pt-[6rem] lg:pt-[7rem] flex flex-col justify-center items-center">
       <div className='w-full max-w-[1400px] flex flex-col justify-center items-center px-[3rem] desktop:px-[0rem]'>
         {/* <Placeholder />  */}
-        {/* <HeroSearch inputTags={searchTag ? searchTag?.split(",") : []} /> */}
+        <HeroSearch inputTags={searchTag ? searchTag?.split(",") : []} />
       </div>
       <div className='Card-section w-full max-w-[1400px] px-[3rem] desktop:px-[0rem]'>
         <div className='Text font-custom font-uppercase font-bold py-[12px] text-[18px]'><p>Результаты  поиска</p></div>
