@@ -17,13 +17,17 @@ export function CardList({ cards }) {
                             <div className="group Card" key={card.id}>
                                 <Link className="block" href={card.link ?? "#"} target="_blank">
                                     <div className="mb-[20px] flex flex-col overflow-hidden box-content">
-                                        <div className="h-[200px] overflow-hidden">
+                                        <div className="flex flex-row">
+                                            <div className="bg-teal-500 pl-4 pr-[40px] py-1 text-white" style={{ clipPath: "polygon(0 0, calc(100% - 40px) 0, 100% 40px, 100% 100%, 0 100%)" }}>для обучения</div>
+                                            <div className="bg-red-500 pl-4 pr-[40px] py-1 text-white" style={{ clipPath: "polygon(0 0, calc(100% - 40px) 0, 100% 40px, 100% 100%, 0 100%)", transform: "translateX(-0px)" }}>для работы</div>
+                                        </div>
+                                        <div className="h-[260px] overflow-hidden" style={{ clipPath: "polygon(0 0, calc(100% - 50px) 0, 100% 50px, 100% 100%, 0 100%)" }}>
                                             <Image
                                                 src={CMS_URL + thumb.url}
                                                 width={500}
                                                 height={500}
                                                 alt={card.title}
-                                                className="object-cover h-min-[100px] w-full h-[200px] group-hover:scale-[1.1] duration-300"
+                                                className="object-cover h-min-[100px] w-full h-full group-hover:scale-[1.16] duration-300"
                                             />
                                         </div>
                                         <div className="txtCard p-[16px] bg-white flex flex-col gap-[16px]">

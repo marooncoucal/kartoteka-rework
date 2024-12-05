@@ -3,7 +3,6 @@
 import Link from 'next/link';
 import { Tag } from '../content/tag';
 import { ArrowSearch, Lucky } from '../content/icons';
-// import Placeholder from './components/layout/placeholder'
 
 import { useState, useEffect, useRef } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
