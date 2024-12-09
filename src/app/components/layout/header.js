@@ -7,8 +7,8 @@ export function Header() {
       <div className='w-[100%] max-w-[1400px] h-[100%] justify-between items-center flex'>
         <Link href={'/'}> <Logo /> </Link>
         <div className='Icons flex gap-[4px]'>
-          <Link href={'/search'}> <SearchIcon /> </Link>
-          <Link href={'/search'}> <Lucky /> </Link>
+          <Link href={'/'}> <SearchIcon /> </Link>
+          <Link href={'/'}> <Lucky /> </Link>
         </div>
       </div>
     </header>

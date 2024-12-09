@@ -45,7 +45,7 @@ export function SearchBar({ tags }) {
                 <div className="Search-Links-cont w-full
                 flex flex-row items-start gap-2
                 ">
-                    <Link href={'/search'}>
+                    <Link href={'/'}>
                         <div className="Random w-[40px] h-[40px] flex justify-center items-center">
                             <Image
                                 src="/icons/random_search.svg"
@@ -71,7 +71,7 @@ export function SearchBar({ tags }) {
                             onKeyDown={(e) => {
                                 if (e.key === "Enter") {
                                     e.preventDefault();
-                                    router.push("/search?q=" + val)
+                                    router.push("/?q=" + val)
                                 }
                             }}
                             ref={textAreaRef}
@@ -87,7 +87,7 @@ export function SearchBar({ tags }) {
                         {/* <Textarea></Textarea> */}
                     </div>
 
-                    <Link href={'/search?q=' + val}>
+                    <Link href={'/?q=' + val}>
                         <div className="Arrow flex justify-center items-center">
                             <Image
                                 src="/icons/arrow_right_short_icon.svg"

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BaseTag } from "../content/tag";
+import { BaseTag, TopTag } from "../content/tag";
 import { CMS_URL } from "@/config";
 import Image from 'next/image';
 
@@ -18,10 +18,21 @@ export function CardList({ cards }) {
                                 <Link className="block" href={card.link ?? "#"} target="_blank">
                                     <div className="mb-[20px] flex flex-col overflow-hidden box-content">
                                         <div className="flex flex-row">
-                                            <div className="bg-teal-500 pl-4 pr-[40px] py-1 text-white" style={{ clipPath: "polygon(0 0, calc(100% - 40px) 0, 100% 40px, 100% 100%, 0 100%)" }}>для обучения</div>
-                                            <div className="bg-red-500 pl-4 pr-[40px] py-1 text-white" style={{ clipPath: "polygon(0 0, calc(100% - 40px) 0, 100% 40px, 100% 100%, 0 100%)", transform: "translateX(-0px)" }}>для работы</div>
+                                            {
+                                                tagsData?.map(tagData => {
+                                                    const tag = tagData
+                                                    const specialTags = ["для работы", "для вдохновения", "для обучения"];
+                                                    if (specialTags.includes(tag.name)) {
+                                                        return <TopTag key={tagData.id} tagType={tag.name}>{tag.name}</TopTag>;
+                                                    }
+                                                    return null;
+                                                })
+                                            }
                                         </div>
-                                        <div className="h-[260px] overflow-hidden" style={{ clipPath: "polygon(0 0, calc(100% - 50px) 0, 100% 50px, 100% 100%, 0 100%)" }}>
+                                        <div
+                                            className="h-[260px] overflow-hidden"
+                                            style={{ clipPath: "polygon(0 0, calc(100% - 50px) 0, 100% 50px, 100% 100%, 0 100%)" }}
+                                        >
                                             <Image
                                                 src={CMS_URL + thumb.url}
                                                 width={500}
@@ -38,9 +49,11 @@ export function CardList({ cards }) {
                                                 {
                                                     tagsData?.map(tagData => {
                                                         const tag = tagData
-                                                        return (
-                                                            <BaseTag key={tagData.id}>{tag.name}</BaseTag>
-                                                        )
+                                                        const specialTags = ["для работы", "для вдохновения", "для обучения"];
+                                                        if (!specialTags.includes(tag.name)) {
+                                                            return <BaseTag key={tagData.id}>{tag.name}</BaseTag>;
+                                                        }
+                                                        return null;
                                                     })
                                                 }
                                             </div>

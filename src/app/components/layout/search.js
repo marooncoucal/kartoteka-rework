@@ -36,7 +36,7 @@ export function SearchBar({ tags }) {
         <div className="SearchBarContainer w-full border-solid border-gray-300 border-b-[1px] min-h-[56px] flex items-start justify-between">
             <div className="Search-Tags-cont w-full gap-[16px] flex-col items-start ">
                 <div className="Search-Links-cont w-full flex flex-row items-start gap-2 ">
-                    <Link href={'/search'}> <Lucky /> </Link>
+                    <Link href={'/'}> <Lucky /> </Link>
                     <div className="Txt-Area-Link-cont w-full flex flex-col items-start gap-2 pb-[1rem]">
                         <textarea
                             className='TextArea w-full h-full font-custom font-medium text-xl  p-[10px] focus:outline-none active:outline-none resize-none placeholder:font-light placeholder:italic placeholder:text-gray-400'
@@ -47,7 +47,7 @@ export function SearchBar({ tags }) {
                             onKeyDown={(e) => {
                                 if (e.key === "Enter") {
                                     e.preventDefault();
-                                    router1.push("/search?q=" + val)
+                                    router1.push("/?q=" + val)
                                 }
                             }}
                             ref={textAreaRef}
@@ -61,7 +61,7 @@ export function SearchBar({ tags }) {
                             placeholder={" Введите запрос или выберите тег"}>
                         </input> */}
                     </div>
-                    <Link href={'/search?q=' + val}> <ArrowSearch /> </Link>
+                    <Link href={'/?q=' + val}> <ArrowSearch /> </Link>
                 </div>
             </div>
         </div>
@@ -80,7 +80,7 @@ export function HeroSearch({ inputTags = [] }) {
                         <div className='w-full flex gap-8'>
                             <div className='font-custom font-bold pt-[4px]'>категория</div>
                             <div className='w-full flex flex-wrap gap-4'>
-                                <Tag tags={tags} setTags={setTags}>для работа</Tag>
+                                <Tag tags={tags} setTags={setTags}>для работы</Tag>
                                 <Tag tags={tags} setTags={setTags}>для обучения</Tag>
                                 <Tag tags={tags} setTags={setTags}>для вдохновения</Tag>
                             </div>

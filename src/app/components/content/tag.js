@@ -31,7 +31,7 @@ export function Tag({ children, clickable = true, tags, setTags }) {
                     // if (tags.length > 0) router.push("/search?tag=" + tags.join(",") + q)
                     // else router.push("/search?" + q) //иначе в роутер просто запрос
 
-                    router.push("/search?tag=" + tags.join(",") + q)
+                    router.push("/?tag=" + tags.join(",") + q)
 
                 }
             }}>
@@ -60,7 +60,22 @@ export function BaseTag({ children }) {
     )
 }
 
-
-
-
-
+export function TopTag({ children, tagType }) {
+    let bgc = '';
+    switch (tagType) {
+        case 'для вдохновения':
+            bgc = 'bg-blue-500';
+            break;
+        case 'для работы':
+            bgc = 'bg-red-500';
+            break;
+        case 'для обучения':
+            bgc = 'bg-teal-500';
+            break;
+        default:
+            bgc = '';
+    }
+    return (
+        <div className={`pl-4 pr-[40px] py-1 text-white ${bgc}`} style={{ clipPath: "polygon(0 0, calc(100% - 40px) 0, 100% 40px, 100% 100%, 0 100%)" }}>{children}</div>
+    )
+}
