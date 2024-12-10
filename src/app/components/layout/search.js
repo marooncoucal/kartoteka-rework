@@ -35,7 +35,7 @@ export function SearchBar({ tags }) {
     return (
         <div className="SearchBarContainer w-full 
         min-h-[56px] flex items-start justify-between">
-            <Logo />
+            {/* <Logo /> */}
             <div className="Search-Tags-cont w-full gap-[16px] flex-col items-start bg-white p-[10px]">
                 <div className="Search-Links-cont w-full flex flex-row items-start gap-2">
                     <div className="Txt-Area-Link-cont 
