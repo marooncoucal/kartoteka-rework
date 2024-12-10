@@ -17,7 +17,7 @@ export function CardList({ cards }) {
                             <div className="group Card" key={card.id}>
                                 <Link className="block" href={card.link ?? "#"} target="_blank">
                                     <div className="mb-[20px] flex flex-col overflow-hidden box-content">
-                                        <div className="flex flex-row">
+                                        <div className="flex flex-row gap-[0px]">
                                             {
                                                 tagsData?.map(tagData => {
                                                     const tag = tagData
@@ -30,7 +30,7 @@ export function CardList({ cards }) {
                                             }
                                         </div>
                                         <div
-                                            className="h-[260px] overflow-hidden"
+                                            className="h-full h-min-[290px] h-max-[560px] overflow-hidden"
                                             style={{ clipPath: "polygon(0 0, calc(100% - 50px) 0, 100% 50px, 100% 100%, 0 100%)" }}
                                         >
                                             <Image
@@ -38,12 +38,13 @@ export function CardList({ cards }) {
                                                 width={500}
                                                 height={500}
                                                 alt={card.title}
-                                                className="object-cover h-min-[100px] w-full h-full group-hover:scale-[1.16] duration-300"
+                                                className="object-cover h-full h-min-[290px] h-max-[560px] w-full group-hover:scale-[1.16] duration-300"
                                             />
                                         </div>
-                                        <div className="txtCard p-[16px] bg-white flex flex-col gap-[16px]">
-                                            <div className="Heading font-custom text-black text-[20px] font-bold uppercase">
-                                                {card.title}
+                                        <div className="p-[20px] bg-white flex flex-col gap-[16px]">
+                                            <div className="flex flex-col gap-[10px]">
+                                                <div className="font-custom text-black text-[22px] leading-none font-extrabold">{card.title} </div>
+                                                <p className="font-custom font-thin text-[20px] leading-snug text-dark-grey">{card.description}</p>
                                             </div>
                                             <div className="flex gap-[8px] flex-wrap">
                                                 {
@@ -56,9 +57,6 @@ export function CardList({ cards }) {
                                                         return null;
                                                     })
                                                 }
-                                            </div>
-                                            <div className=" font-custom text-dark-grey text-[16px] font-medium">
-                                                <p className="">{card.description}</p>
                                             </div>
                                         </div>
                                     </div>

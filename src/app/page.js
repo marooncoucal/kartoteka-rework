@@ -56,7 +56,7 @@ export default async function Page2({ params, searchParams }) {
   filteredCards = [...new Set(filteredCards)] //убирает дубликаты
 
   return (
-    <div className="w-full pt-[6rem] md:pt-[6rem] lg:pt-[7rem] flex flex-col justify-center items-center">
+    <div className="w-full pt-[2rem] flex flex-col justify-center items-center">
       <div className='w-full max-w-[1400px] flex flex-col justify-center items-center px-[3rem] desktop:px-[0rem]'>
         <HeroSearch inputTags={searchTag ? searchTag?.split(",") : []} />
       </div>

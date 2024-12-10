@@ -13,7 +13,18 @@ module.exports = {
         'custom-white': '#f0f0f0',
       },
       fontFamily: {
-        custom: ['Helios', 'sans-serif']
+        custom: ['Helios', 'HeliosLight', 'HeliosThin', 'HeliosBlack', 'sans-serif']
+      },
+      fontWeight: {
+        thin: '100',
+        extralight: '200',
+        light: '300',
+        normal: '400',
+        medium: '500',
+        semibold: '600',
+        bold: '700',
+        extrabold: '800',
+        black: '900',
       },
       screens: {
         'desktop': '1580px',

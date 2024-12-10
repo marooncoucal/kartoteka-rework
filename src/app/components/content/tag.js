@@ -16,8 +16,10 @@ export function Tag({ children, clickable = true, tags, setTags }) {
 
     return (
         <div className={`
-        px-[12px] py-[6px] justify-center items-center flex select-none cursor-pointer leading-none
-        ${active ? "bg-black gap-[12px] text-white" : "border-solid border-black border-[2px] gap-[0px] text-black"}
+            leading-none text-[14px] font-custom
+            px-[12px] py-[6px] justify-center items-center flex 
+            select-none cursor-pointer 
+            ${active ? "bg-black gap-[12px] text-white" : "border-solid border-black border-[1px] gap-[0px] text-black"}
         `} onClick={() => {
                 if (clickable) { //если можно кликнуть
                     if (!active) { // если тега в массиве нет
@@ -51,9 +53,9 @@ export function Tag({ children, clickable = true, tags, setTags }) {
 export function BaseTag({ children }) {
     return (
         <div className="
-        px-[14px] pt-[10px] pb-[11px]
-        rounded-full justify-center items-center flex select-none
-        border-solid border-gray-200 border-[1px] gap-[0px] text-black
+        px-[12px] py-[6px]
+        justify-center items-center flex select-none
+        border-solid border-black border-[1px] gap-[0px] text-black
         ">
             <div className="Text text-[16px] font-custom font-medium leading-none">{children}</div>
         </div>
