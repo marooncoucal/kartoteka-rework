@@ -37,7 +37,7 @@ export function HeroSearch({ variant }) {
                             '>
 
                                 <div className='w-full flex gap-8'>
-                                    <div className='font-custom font-bold pt-[4px]'>почему</div>
+                                    <div className='font-custom pt-[4px]'>почему</div>
                                     <div className='w-full flex flex-wrap gap-4'>
                                         <Tag tags={tags} setTags={setTags}>работа</Tag>
                                         <Tag tags={tags} setTags={setTags}>обучение</Tag>
@@ -47,7 +47,7 @@ export function HeroSearch({ variant }) {
                                 </div>
 
                                 <div className='w-full pl-7 flex gap-8'>
-                                    <div className='font-custom font-bold pt-[4px]'>что</div>
+                                    <div className='font-custom pt-[4px]'>что</div>
                                     <div className='w-full flex flex-wrap gap-4'>
                                         <Tag tags={tags} setTags={setTags}>картинка</Tag>
                                         <Tag tags={tags} setTags={setTags}>текст</Tag>
@@ -60,7 +60,8 @@ export function HeroSearch({ variant }) {
                                 </div>
 
                             </div>
-                        )}
+                        )
+                }
 
             </div>
         </div>

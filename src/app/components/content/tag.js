@@ -16,7 +16,7 @@ export function Tag({ children, clickable = true, tags, setTags }) {
 
     return (
         <div className={`
-            leading-none text-[14px] font-custom
+            leading-none text-[14px] font-custom font-light
             px-[12px] py-[6px] justify-center items-center flex 
             select-none cursor-pointer 
             ${active ? "bg-black gap-[12px] text-white" : "border-solid border-black border-[1px] gap-[0px] text-black"}
@@ -78,6 +78,6 @@ export function TopTag({ children, tagType }) {
             bgc = '';
     }
     return (
-        <div className={`pl-4 pr-[40px] py-1 text-white ${bgc}`} style={{ clipPath: "polygon(0 0, calc(100% - 40px) 0, 100% 40px, 100% 100%, 0 100%)" }}>{children}</div>
+        <div className={`pl-4 pr-10 py-1 text-white ${bgc}`} style={{ clipPath: "polygon(0 0, calc(100% - 20%) 0, 100% 100%, 100% 100%, 0 100%)" }}>{children}</div>
     )
 }

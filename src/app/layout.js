@@ -2,6 +2,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { Header } from './components/layout/header'
 import Footer from './components/layout/footer'
+import { helios } from "./fonts/fonts";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -23,7 +24,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="ru">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-custom-white`}
+        className={`${helios.className} antialiased bg-custom-white`}
       >
         {/* <Header /> */}
         <div className=''>

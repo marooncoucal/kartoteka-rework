@@ -34,9 +34,9 @@ export function SearchBar({ tags }) {
 
     return (
         <div className="SearchBarContainer w-full 
-        min-h-[56px] flex items-start justify-between">
-            {/* <Logo /> */}
-            <div className="Search-Tags-cont w-full gap-[16px] flex-col items-start bg-white p-[10px]">
+        min-h-[56px] flex items-start justify-between gap-[12px] desktop:gap-[0px]">
+            <div className='scale-[1.1] desktop:translate-x-[-4rem] desktop:w-[0px]'><Logo /></div>
+            <div className="Search-Tags-cont w-full gap-[16px] flex-col items-start bg-white ">
                 <div className="Search-Links-cont w-full flex flex-row items-start gap-2">
                     <div className="Txt-Area-Link-cont 
                         w-full h-full flex flex-col items-start">
@@ -83,7 +83,7 @@ export function HeroSearch({ inputTags = [] }) {
                     <div className='TagLines-var1 w-full flex flex-col gap-[18px] '>
                         <div className='w-full flex gap-8'>
                             <div className='w-full flex flex-wrap gap-4'>
-                                <TopTag tags={tags} setTags={setTags} tagType={`для работы`}>для работы</TopTag>
+                                {/* <TopTag tags={tags} setTags={setTags} tagType={`для работы`}>для работы</TopTag> */}
                                 <Tag tags={tags} setTags={setTags} className={`bg-red-500`}>для работы</Tag>
                                 <Tag tags={tags} setTags={setTags}>для обучения</Tag>
                                 <Tag tags={tags} setTags={setTags}>для вдохновения</Tag>

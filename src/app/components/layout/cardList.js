@@ -43,8 +43,8 @@ export function CardList({ cards }) {
                                         </div>
                                         <div className="p-[20px] bg-white flex flex-col gap-[16px]">
                                             <div className="flex flex-col gap-[10px]">
-                                                <div className="font-custom text-black text-[22px] leading-none font-extrabold">{card.title} </div>
-                                                <p className="font-custom font-thin text-[20px] leading-snug text-dark-grey">{card.description}</p>
+                                                <div className="font-custom text-black text-[22px] leading-none font-bold">{card.title} </div>
+                                                <p className="font-custom font-light text-[20px] leading-snug text-dark-grey">{card.description}</p>
                                             </div>
                                             <div className="flex gap-[8px] flex-wrap">
                                                 {

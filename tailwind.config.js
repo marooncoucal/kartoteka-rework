@@ -12,9 +12,6 @@ module.exports = {
         'dark-grey': '#666666',
         'custom-white': '#f0f0f0',
       },
-      fontFamily: {
-        custom: ['Helios', 'HeliosLight', 'HeliosThin', 'HeliosBlack', 'sans-serif']
-      },
       fontWeight: {
         thin: '100',
         extralight: '200',

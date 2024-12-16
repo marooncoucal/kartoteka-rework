@@ -57,10 +57,10 @@ export default async function Page2({ params, searchParams }) {
 
   return (
     <div className="w-full pt-[2rem] flex flex-col justify-center items-center">
-      <div className='w-full max-w-[1400px] flex flex-col justify-center items-center px-[3rem] desktop:px-[0rem]'>
+      <div className='w-full max-w-[1400px] flex flex-col justify-center items-center px-[1rem] desktop:px-[0rem]'>
         <HeroSearch inputTags={searchTag ? searchTag?.split(",") : []} />
       </div>
-      <div className='Card-section w-full max-w-[1400px] px-[3rem] desktop:px-[0rem]'>
+      <div className='Card-section w-full max-w-[1400px] px-[1rem] desktop:px-[0rem]'>
         {/* <div className='Text font-custom font-uppercase font-bold py-[12px] text-[18px]'><p>Результаты  поиска</p></div> */}
         <CardList cards={filteredCards} />
       </div>
