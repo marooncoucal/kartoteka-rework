@@ -2,24 +2,23 @@
 
 A collection of helpful links for designers and an experimental project of B&D institute laboratory.
 
-## Getting Started
+## Working on local
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-
-First, run the development server:
+First, install packages and run the development server:
 
 ```bash
+npm i 
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+Make sure to `create a new branch` for your tasks.
+
+After finishing, `commit` changes for review.
 
 ## Updating code on server
 
