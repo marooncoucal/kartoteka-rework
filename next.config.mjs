@@ -7,7 +7,6 @@ const nextConfig = {
                 hostname: "localhost"
             },
             {
-                protocol: "http",
                 hostname: "kartotekacms.ibnd.ru"
             }
         ]

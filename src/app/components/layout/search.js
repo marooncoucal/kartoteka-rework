@@ -33,19 +33,19 @@ export function SearchBar({ tags }) {
     }, [val])
 
     return (
-        <div className="SearchBarContainer w-full 
+        <div className="SearchBarContainer w-full
         min-h-[56px] flex items-start justify-between gap-[12px] desktop:gap-[0px]">
             <div className='scale-[1.1] desktop:translate-x-[-4rem] desktop:w-[0px]'><Logo /></div>
-            <div className="Search-Tags-cont w-full gap-[16px] flex-col items-start bg-white ">
-                <div className="Search-Links-cont w-full flex flex-row items-start gap-2">
+            <div className="Search-Tags-cont w-full gap-[16px] flex-col items-start bg-white p-2">
+                <div className="Search-Links-cont w-full flex flex-row items-center gap-2">
                     <div className="Txt-Area-Link-cont 
                         w-full h-full flex flex-col items-start">
                         <textarea
+                            className='TextArea w-full h-full font-custom font-medium text-[16px] leading-none focus:outline-none active:outline-none resize-none placeholder:font-light placeholder:text-gray-400 '
                             // бегущая строка с разными подсказками
-                            className='TextArea w-full h-full font-custom font-medium text-[16px] leading-none p-[10px] focus:outline-none active:outline-none resize-none placeholder:font-light placeholder:text-gray-400 '
-                            placeholder={"картотека полезных ссылок для обучения, работы и вдохновения"}
+                            placeholder={"картотека полезных ссылок"}
                             rows="1"
-                            value={val}
+                            value={val ?? ""}
                             onChange={handleChange}
                             onKeyDown={(e) => {
                                 if (e.key === "Enter") {
@@ -55,11 +55,6 @@ export function SearchBar({ tags }) {
                             }}
                             ref={textAreaRef}
                         ></textarea>
-                        {/*<input contenteditable="true"
-                            className="font-custom font-medium text-[16px] p-[10px] focus:outline-none
-                            placeholder:font-light placeholder:italic placeholder:text-gray-400"
-                            placeholder={" Введите запрос или выберите тег"}>
-                        </input> */}
                     </div>
                     <Link href={'/?q=' + val}> <SearchIcon /> </Link>
                     <Link href={'/'}> <Lucky /> </Link>
@@ -83,10 +78,9 @@ export function HeroSearch({ inputTags = [] }) {
                     <div className='TagLines-var1 w-full flex flex-col gap-[18px] '>
                         <div className='w-full flex gap-8'>
                             <div className='w-full flex flex-wrap gap-4'>
-                                {/* <TopTag tags={tags} setTags={setTags} tagType={`для работы`}>для работы</TopTag> */}
-                                <Tag tags={tags} setTags={setTags} className={`bg-red-500`}>для работы</Tag>
-                                <Tag tags={tags} setTags={setTags}>для обучения</Tag>
-                                <Tag tags={tags} setTags={setTags}>для вдохновения</Tag>
+                                <Tag tags={tags} setTags={setTags} tagColor={`для работы`}>для работы</Tag>
+                                <Tag tags={tags} setTags={setTags} tagColor={`для обучения`}>для обучения</Tag>
+                                <Tag tags={tags} setTags={setTags} tagColor={`для вдохновения`}>для вдохновения</Tag>
                             </div>
                         </div>
                         <div className='w-full flex gap-8'>

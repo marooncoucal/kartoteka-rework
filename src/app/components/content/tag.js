@@ -5,30 +5,48 @@ import { useSearchParams } from 'next/navigation';
 import { useRouter } from 'next/navigation';
 
 
-export function Tag({ children, clickable = true, tags, setTags }) {
+export function Tag({ children, clickable = true, tags, setTags, tagColor }) {
     // массив с тегами, ?. нашлось или нет, если что выкидывает undefined вместо ошибки
     let active = tags?.includes(children)
 
     let searchParams = useSearchParams()
-    //если нашёл q, то добавить q, иначе пустая строка
+    // если нашёл запрос q, то добавить q, иначе пустая строка
     let q = searchParams.get("q") ? "&q=" + searchParams.get("q") : ""
     let router = useRouter()
 
+    let bgc = '';
+    switch (tagColor) {
+        case 'для вдохновения':
+            bgc = 'bg-blue-500 text-white';
+            break;
+        case 'для работы':
+            bgc = 'bg-red-500 text-white';
+            break;
+        case 'для обучения':
+            bgc = 'bg-teal-500 text-white';
+            break;
+        default:
+            bgc = 'bg-custom-white border-solid border-black border-[1px] text-black';
+    }
+
     return (
         <div className={`
-            leading-none text-[14px] font-custom font-light
+            leading-none text-[14px] font-custom
             px-[12px] py-[6px] justify-center items-center flex 
             select-none cursor-pointer 
-            ${active ? "bg-black gap-[12px] text-white" : "border-solid border-black border-[1px] gap-[0px] text-black"}
+            ${active ? `bg-black gap-[12px] text-white` : `${bgc} gap-[0px] `}
         `} onClick={() => {
-                if (clickable) { //если можно кликнуть
-                    if (!active) { // если тега в массиве нет
-                        tags.push(children) // то записать в основной
-                    } else { // иначе удалить (ещё один клик)
+                //если можно кликнуть
+                if (clickable) {
+                    // если тега в массиве нет (не выбран -> не актив), то записать в основной
+                    if (!active) { tags.push(children) }
+                    // иначе удалить (ещё один клик)
+                    else {
                         // находит номер элемента, и с него удаляет
                         tags.splice(tags.indexOf(children), 1)
                     }
                     setTags([...tags]) //обновляется массив
+
                     //если в основном массиве что-то есть, то отправить в запрос выбранные теги
                     // if (tags.length > 0) router.push("/search?tag=" + tags.join(",") + q)
                     // else router.push("/search?" + q) //иначе в роутер просто запрос
@@ -37,7 +55,7 @@ export function Tag({ children, clickable = true, tags, setTags }) {
 
                 }
             }}>
-            <div className="Text text-[16px] font-custom font-bold leading-none">{children}</div>
+            <div className="Text text-[16px] leading-none">{children}</div>
             <div className="Cross flex justify-center items-center">
                 {active && <Image
                     src="/icons/cross_desktop.svg"
@@ -62,7 +80,7 @@ export function BaseTag({ children }) {
     )
 }
 
-export function TopTag({ children, tagType }) {
+export function TopTag({ children, tagType, variant }) {
     let bgc = '';
     switch (tagType) {
         case 'для вдохновения':
@@ -78,6 +96,15 @@ export function TopTag({ children, tagType }) {
             bgc = '';
     }
     return (
-        <div className={`pl-4 pr-10 py-1 text-white ${bgc}`} style={{ clipPath: "polygon(0 0, calc(100% - 20%) 0, 100% 100%, 100% 100%, 0 100%)" }}>{children}</div>
+        <div>
+            {
+                variant === 2 ? (
+                    <div className={`pl-4 pr-4 py-1 text-white ${bgc}`}>{children}</div>
+
+                ) : (
+                    <div className={`pl-4 pr-10 py-1 text-white ${bgc}`} style={{ clipPath: "polygon(0 0, calc(100% - 20%) 0, 100% 100%, 100% 100%, 0 100%)" }}>{children}</div>
+                )
+            }
+        </div>
     )
 }

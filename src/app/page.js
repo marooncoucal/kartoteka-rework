@@ -5,7 +5,6 @@ import { CardList } from './components/layout/cardList';
 import { HeroSearch } from './components/layout/search';
 
 export default async function Page2({ params, searchParams }) {
-
   const data = await fetch(CMS_URL + "/api/kartochkas?populate=thumb&populate=tags", { cache: 'no-store' }); //no-store потом убрать, popultae for images thumb
   const json = await data.json()
   const cards = json.data

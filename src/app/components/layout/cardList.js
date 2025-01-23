@@ -33,13 +33,25 @@ export function CardList({ cards }) {
                                             className="h-full h-min-[290px] h-max-[560px] overflow-hidden"
                                             style={{ clipPath: "polygon(0 0, calc(100% - 50px) 0, 100% 50px, 100% 100%, 0 100%)" }}
                                         >
-                                            <Image
-                                                src={CMS_URL + thumb.url}
-                                                width={500}
-                                                height={500}
-                                                alt={card.title}
-                                                className="object-cover h-full h-min-[290px] h-max-[560px] w-full group-hover:scale-[1.16] duration-300"
-                                            />
+                                            {
+                                                thumb.mime.includes("video") ? <video
+                                                    src={CMS_URL + thumb.url}
+                                                    className="object-cover h-full h-min-[290px] h-max-[560px] w-full group-hover:scale-[1.16] duration-300"
+                                                    playsInline
+                                                    autoPlay
+                                                    muted
+                                                    loop
+                                                />
+                                                    :
+                                                    <Image
+                                                        src={CMS_URL + thumb.url}
+                                                        width={500}
+                                                        height={500}
+                                                        alt={card.title}
+                                                        className="object-cover h-full h-min-[290px] h-max-[560px] w-full group-hover:scale-[1.16] duration-300"
+                                                    />
+                                            }
+
                                         </div>
                                         <div className="p-[20px] bg-white flex flex-col gap-[16px]">
                                             <div className="flex flex-col gap-[10px]">
