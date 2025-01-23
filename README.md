@@ -1,3 +1,5 @@
+![Logo](https://github.com/marooncoucal/kartoteka-rework/blob/master/README-img/logo_banner.png)
+
 # kartoteka.
 
 A collection of helpful links for designers and an experimental project of B&D institute laboratory.
