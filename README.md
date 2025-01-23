@@ -36,7 +36,7 @@ Transfer files from local folder to server folder
 
 ![filezilla-window-example](https://github.com/marooncoucal/kartoteka-rework/blob/master/README-img/filezilla-window-example.png)
 
-After transfering updated files, connect to server via cmd on your computer
+After transfering updated files, connect to server via `cmd` on your computer
 
 ```bash
   ssh your_folder@site_name
