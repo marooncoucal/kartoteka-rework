@@ -36,15 +36,20 @@ Transfer files from local folder to server folder
 
 ![filezilla-window-example](https://github.com/marooncoucal/kartoteka-rework/blob/master/README-img/filezilla-window-example.png)
 
-After transfering updated files, update project build
+After transfering updated files, connect to server via cmd on your computer
+
+```bash
+  ssh your_folder@site_name
+  password: your_assigned_password
+```
+
+Make sure to be in the correct folder before starting update. Use `cd` to move down and `..` to move up through folders.
+
+After moving to correct folder rebuild and restart server:
 
 ```bash
   npm run build
-```
 
-After build is complete restart server
-
-```bash
   pm2 restart kartoteka
 ```
 
