@@ -8,6 +8,10 @@ A collection of helpful links for designers and an experimental project of B&D i
 
 - [Run Locally](#run-locally)
 - [Updating code on server](#updating-code-on-server)
+- [API Reference](#api-reference)
+- [Usage Examples](#usage-examples)
+- [Links](#links)
+- [Authors](#authors)
 
 ## Run Locally
 
@@ -75,8 +79,11 @@ After moving to correct folder rebuild and restart server:
 
 If you encounter errors, try googling the solution and/or contact your teacher and administrator
 
+## API Reference
 
-## 🔗 Links
+## Usage Examples
+
+## Links
 
 Demo https://kartoteka.ibnd.ru/
 
@@ -89,7 +96,8 @@ CMS https://kartotekacms.ibnd.ru/
 
 
 ## Acknowledgements
-
+ - [Next.jsl](https://nextjs.org/)
+ - [Strapi](https://strapi.io/)
  - [Институт Бизнеса и Дизайна](https://obe.ru/)
  - [Борис Маркевич](https://www.behance.net/borismarkevichf685)
  - Игорь Мелехов
