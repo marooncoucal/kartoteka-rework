@@ -2,23 +2,42 @@
 
 A collection of helpful links for designers and an experimental project of B&D institute laboratory.
 
-## Working on local
+## Table of Contents
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+- [Run Locally](#run-locally)
+- [Updating code on server](#updating-code-on-server)
 
-First, install packages and run the development server:
+## Run Locally
+
+Clone the project
 
 ```bash
-npm i 
-
-npm run dev
+  git clone https://link-to-project
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Go to the project directory
 
-Make sure to `create a new branch` for your tasks.
+```bash
+  cd my-project
+```
 
-After finishing, `commit` changes for review.
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result
+
+Make sure to `create a new branch` for your tasks
+
+After finishing, `commit` changes for review
 
 ## Updating code on server
 
