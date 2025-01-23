@@ -28,9 +28,13 @@ Use [FileZilla Documentation](https://wiki.filezilla-project.org/Using) to navig
 
 To update this project you will need access to server. Contact your teacher or administrator for permission. After you are connected, you can proceed with next steps
 
-- connect to server via "Быстрое соединение"
+connect to server via "Менеджер сайтов" icon under programm logo
 
 ![Connect to server](https://github.com/marooncoucal/kartoteka-rework/blob/master/README-img/connect-filezilla.png)
+
+Transfer files from local folder to server folder
+
+![filezilla-window-example]()
 
 After transfering updated files, update project build
 
@@ -43,3 +47,5 @@ After build is complete restart server
 ```bash
   pm2 restart kartoteka
 ```
+
+If you encounter errors, try googling the solution and/or contact your teacher and administrator
