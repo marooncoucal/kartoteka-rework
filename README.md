@@ -2,7 +2,7 @@
 
 # kartoteka.
 
-A collection of helpful links for designers and an experimental project of B&D institute laboratory.
+A collection of helpful links for designers and an experimental project of B&D institute laboratory. Demo: https://kartoteka.ibnd.ru/
 
 ## Table of Contents
 
@@ -74,3 +74,23 @@ After moving to correct folder rebuild and restart server:
 ```
 
 If you encounter errors, try googling the solution and/or contact your teacher and administrator
+
+
+## 🔗 Links
+
+Demo https://kartoteka.ibnd.ru/
+
+CMS https://kartotekacms.ibnd.ru/
+
+## Authors
+
+- [@marooncoucal](https://www.behance.net/marooncoucal)
+- [@ekaterisalovar](https://www.behance.net/ekaterisalovar)
+
+
+## Acknowledgements
+
+ - [Институт Бизнеса и Дизайна](https://obe.ru/)
+ - [Борис Маркевич](https://www.behance.net/borismarkevichf685)
+ - Игорь Мелехов
+ - Татьяна Михалина 
