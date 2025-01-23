@@ -34,7 +34,7 @@ connect to server via "Менеджер сайтов" icon under programm logo
 
 Transfer files from local folder to server folder
 
-![filezilla-window-example]()
+![filezilla-window-example](![filezilla-window-example](https://github.com/marooncoucal/kartoteka-rework/blob/master/README-img/filezilla-window-example.png))
 
 After transfering updated files, update project build
 
