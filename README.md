@@ -78,3 +78,27 @@ After moving to correct folder rebuild and restart server:
 ```
 
 If you encounter errors, try googling the solution and/or contact your teacher and administrator
+
+## API Reference
+
+## Usage Examples
+
+## Links
+
+Demo https://kartoteka.ibnd.ru/
+
+CMS https://kartotekacms.ibnd.ru/
+
+## Authors
+
+- [@marooncoucal](https://www.behance.net/marooncoucal)
+- [@ekaterisalovar](https://www.behance.net/ekaterisalovar)
+
+
+## Acknowledgements
+ - [Next.js](https://nextjs.org/)
+ - [Strapi](https://strapi.io/)
+ - [Институт Бизнеса и Дизайна](https://obe.ru/)
+ - [Борис Маркевич](https://www.behance.net/borismarkevichf685)
+ - [Игорь Мелехов](https://obe.ru/teacher/melehov-igor-sergeevich/)
+ - [Татьяна Михалина](https://obe.ru/teacher/mihalina-tatyana-nikolaevna-2/)
