@@ -96,9 +96,9 @@ CMS https://kartotekacms.ibnd.ru/
 
 
 ## Acknowledgements
- - [Next.jsl](https://nextjs.org/)
+ - [Next.js](https://nextjs.org/)
  - [Strapi](https://strapi.io/)
  - [Институт Бизнеса и Дизайна](https://obe.ru/)
  - [Борис Маркевич](https://www.behance.net/borismarkevichf685)
- - Игорь Мелехов
- - Татьяна Михалина 
+ - [Игорь Мелехов](https://obe.ru/teacher/melehov-igor-sergeevich/)
+ - [Татьяна Михалина](https://obe.ru/teacher/mihalina-tatyana-nikolaevna-2/)
