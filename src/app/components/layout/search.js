@@ -33,13 +33,14 @@ export function SearchBar({ tags }) {
     }, [val])
 
     return (
-        <div className="SearchBarContainer w-full
-        min-h-[56px] flex items-start justify-between gap-[12px] desktop:gap-[0px]">
-            <div className='scale-[1.1] desktop:translate-x-[-4rem] desktop:w-[0px]'><Logo /></div>
-            <div className="Search-Tags-cont w-full gap-[16px] flex-col items-start bg-white p-2">
-                <div className="Search-Links-cont w-full flex flex-row items-center gap-2">
+        <div className="SearchBarContainer w-full min-h-[50px] h-[50px] flex items-start justify-between gap-[12px] desktop:gap-[0px]">
+            <div className='h-full desktop:translate-x-[-4rem] desktop:w-[0px]'>
+                <Link href={'/?q=' + val}> <Logo /> </Link>
+            </div>
+            <div className="Search-Tags-cont h-[50px] w-full bg-white">
+                <div className="Search-Links-cont w-full h-[50px] flex flex-row items-center pr-[8px]">
                     <div className="Txt-Area-Link-cont 
-                        w-full h-full flex flex-col items-start">
+                        w-full h-[50px] px-[16px] flex items-center">
                         <textarea
                             className='TextArea w-full h-full font-custom font-medium text-[16px] leading-none focus:outline-none active:outline-none resize-none placeholder:font-light placeholder:text-gray-400 '
                             // бегущая строка с разными подсказками
@@ -57,11 +58,11 @@ export function SearchBar({ tags }) {
                         ></textarea>
                     </div>
                     <Link href={'/?q=' + val}> <SearchIcon /> </Link>
-                    <Link href={'/'}> <Lucky /> </Link>
                 </div>
-                <div className=''>
+                {/* здесь были теги, которые добавлялись в строку после фильтрации */}
+                {/* <div className=''>
                     <SearchTags tags={tags} />
-                </div>
+                </div> */}
             </div>
         </div>
     )

@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 export function Lucky() {
     return (
@@ -28,11 +29,11 @@ export function ArrowSearch() {
 
 export function Logo() {
     return (
-        <div className="Search w-[40px] h-[40px] flex justify-center items-center">
+        <div className="Search w-[50x] h-[50px] flex justify-center items-center">
             <Image
                 src="/icons/logo_kartoteka.svg"
-                height={36}
-                width={36}
+                height={50}
+                width={50}
                 alt="cross icon"
             />
         </div>
