@@ -31,10 +31,11 @@ export function Tag({ children, clickable = true, tags, setTags, tagColor }) {
 
     return (
         <div className={`
-            leading-none text-[14px] font-custom
-            px-[12px] py-[6px] justify-center items-center flex 
+            leading-none text-[16px] font-custom
+            px-[16px] pb-[2px] h-[30px]
+            justify-center items-center flex 
             select-none cursor-pointer 
-            ${active ? `bg-black gap-[12px] text-white` : `${bgc} gap-[0px] `}
+            ${active ? `bg-black gap-[10px] text-white` : `${bgc} gap-[0px] `}
         `} onClick={() => {
                 //если можно кликнуть
                 if (clickable) {
@@ -59,8 +60,8 @@ export function Tag({ children, clickable = true, tags, setTags, tagColor }) {
             <div className="Cross flex justify-center items-center">
                 {active && <Image
                     src="/icons/cross_desktop.svg"
-                    height={10}
-                    width={10}
+                    height={14}
+                    width={14}
                     alt="cross icon"
                 />}
             </div>
@@ -71,9 +72,11 @@ export function Tag({ children, clickable = true, tags, setTags, tagColor }) {
 export function BaseTag({ children }) {
     return (
         <div className="
-        px-[12px] py-[6px]
-        justify-center items-center flex select-none
-        border-solid border-black border-[1px] gap-[0px] text-black
+        leading-none text-[16px] font-custom text-black
+        px-[16px] pb-[2px] h-[30px]
+        justify-center items-center flex gap-[0px] 
+        select-none cursor-pointer 
+        border-solid border-black border-[1px] 
         ">
             <div className="Text text-[16px] font-custom font-medium leading-none">{children}</div>
         </div>
@@ -99,10 +102,18 @@ export function TopTag({ children, tagType, variant }) {
         <div>
             {
                 variant === 2 ? (
-                    <div className={`pl-4 pr-4 py-1 text-white ${bgc}`}>{children}</div>
+                    <div className={`
+                        pl-[16px] pr-[40px] pb-[2px] h-[30px] 
+                        text-[16px] font-custom font-medium leading-none text-white
+                        justify-center items-center flex gap-[0px]
+                        ${bgc}`}>{children}</div>
 
                 ) : (
-                    <div className={`pl-4 pr-10 py-1 text-white ${bgc}`} style={{ clipPath: "polygon(0 0, calc(100% - 20%) 0, 100% 100%, 100% 100%, 0 100%)" }}>{children}</div>
+                    <div className={`
+                        pl-[16px] pr-[40px] pb-[2px] h-[30px] 
+                        text-[16px] font-custom font-medium leading-none text-white
+                        justify-center items-center flex gap-[0px]
+                        ${bgc}`} style={{ clipPath: "polygon(0 0, calc(100% - 20%) 0, 100% 100%, 100% 100%, 0 100%)" }}>{children}</div>
                 )
             }
         </div>

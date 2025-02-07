@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { Tag, TopTag } from '../content/tag';
-import { ArrowSearch, Logo, Lucky, SearchIcon } from '../content/icons';
+import { Logo, SearchIcon } from '../content/icons';
 
 import { useState, useEffect, useRef } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
@@ -33,13 +33,13 @@ export function SearchBar({ tags }) {
     }, [val])
 
     return (
-        <div className="SearchBarContainer w-full min-h-[50px] h-[50px] flex items-start justify-between gap-[12px] desktop:gap-[0px]">
-            <div className='h-full desktop:translate-x-[-4rem] desktop:w-[0px]'>
-                <Link href={'/?q=' + val}> <Logo /> </Link>
-            </div>
-            <div className="Search-Tags-cont h-[50px] w-full bg-white">
-                <div className="Search-Links-cont w-full h-[50px] flex flex-row items-center pr-[8px]">
-                    <div className="Txt-Area-Link-cont 
+        <div className="SearchBar relative w-full min-h-[50px] h-[50px] flex items-start justify-start gap-[12px] desktop:flex-nowrap desktop:w-[1400px] desktop:mx-auto">
+            <Link href={'/?q='} className='absolute 
+            translate-x-[0%] transition delay-150 duration-200 ease-in-out desktop:translate-x-[-160%] desktop:shrink-0
+            '> <Logo /> </Link>
+            <div className="Search-Tags-cont bg-white h-[50px] w-[96%] ml-[70px] transition transition-[width] transition-[margin] delay-150 duration-200 ease-in-out delay-150 duration-200 ease-in-out desktop:w-[100%] desktop:ml-[0px]">
+                <div className="Search-input-cont w-full h-[50px] flex flex-row items-center pr-[8px]">
+                    <div className="Txt-Area-cont 
                         w-full h-[50px] px-[16px] flex items-center">
                         <textarea
                             className='TextArea w-full h-full font-custom font-medium text-[16px] leading-none focus:outline-none active:outline-none resize-none placeholder:font-light placeholder:text-gray-400 '
@@ -59,8 +59,8 @@ export function SearchBar({ tags }) {
                     </div>
                     <Link href={'/?q=' + val}> <SearchIcon /> </Link>
                 </div>
-                {/* здесь были теги, которые добавлялись в строку после фильтрации */}
-                {/* <div className=''>
+                {/* здесь были теги, которые добавлялись в строку после фильтрации
+                 <div className=''>
                     <SearchTags tags={tags} />
                 </div> */}
             </div>
@@ -70,39 +70,31 @@ export function SearchBar({ tags }) {
 
 export function HeroSearch({ inputTags = [] }) {
     const [tags, setTags] = useState(inputTags)
-
     return (
-        <div className='Hero w-full flex flex-col justify-center items-center pb-[2rem] md:pb-[3rem] lg:pb-[4rem]'>
-            <div className='SearchBar-TagLines-cont w-full flex flex-col gap-[28px]'>
-                <SearchBar tags={tags} />
-                {
-                    <div className='TagLines-var1 w-full flex flex-col gap-[18px] '>
-                        <div className='w-full flex gap-8'>
-                            <div className='w-full flex flex-wrap gap-4'>
-                                <Tag tags={tags} setTags={setTags} tagColor={`для работы`}>для работы</Tag>
-                                <Tag tags={tags} setTags={setTags} tagColor={`для обучения`}>для обучения</Tag>
-                                <Tag tags={tags} setTags={setTags} tagColor={`для вдохновения`}>для вдохновения</Tag>
-                            </div>
-                        </div>
-                        <div className='w-full flex gap-8'>
-                            <div className='w-full flex flex-wrap gap-4'>
-                                <Tag tags={tags} setTags={setTags}>видео</Tag>
-                                <Tag tags={tags} setTags={setTags}>код</Tag>
-                                <Tag tags={tags} setTags={setTags}>авторы</Tag>
-                                <Tag tags={tags} setTags={setTags}>3D</Tag>
-                                <Tag tags={tags} setTags={setTags}>инструменты</Tag>
-                                <Tag tags={tags} setTags={setTags}>изображения</Tag>
-                                <Tag tags={tags} setTags={setTags}>события</Tag>
-                                <Tag tags={tags} setTags={setTags}>звук</Tag>
-                                <Tag tags={tags} setTags={setTags}>литература</Tag>
-                                <Tag tags={tags} setTags={setTags}>медиа</Tag>
-
-                            </div>
-                        </div>
+        <div className='SearchBar-TagLines-cont w-full flex flex-col'>
+            <SearchBar tags={tags} />
+            {
+                <div className='TagLines w-full flex flex-col gap-[12px] lg:gap-[18px] py-[3rem] md:py-[3rem] lg:py-[4rem]'>
+                    <div className='w-full flex flex-wrap gap-[12px] lg:gap-[18px]'>
+                        <Tag tags={tags} setTags={setTags} tagColor={`для работы`}>для работы</Tag>
+                        <Tag tags={tags} setTags={setTags} tagColor={`для обучения`}>для обучения</Tag>
+                        <Tag tags={tags} setTags={setTags} tagColor={`для вдохновения`}>для вдохновения</Tag>
                     </div>
-                }
+                    <div className='w-full flex flex-wrap gap-[12px] lg:gap-[18px]'>
+                        <Tag tags={tags} setTags={setTags}>видео</Tag>
+                        <Tag tags={tags} setTags={setTags}>код</Tag>
+                        <Tag tags={tags} setTags={setTags}>авторы</Tag>
+                        <Tag tags={tags} setTags={setTags}>3D</Tag>
+                        <Tag tags={tags} setTags={setTags}>инструменты</Tag>
+                        <Tag tags={tags} setTags={setTags}>изображения</Tag>
+                        <Tag tags={tags} setTags={setTags}>события</Tag>
+                        <Tag tags={tags} setTags={setTags}>звук</Tag>
+                        <Tag tags={tags} setTags={setTags}>литература</Tag>
+                        <Tag tags={tags} setTags={setTags}>медиа</Tag>
+                    </div>
+                </div>
+            }
 
-            </div>
         </div>
     )
 }

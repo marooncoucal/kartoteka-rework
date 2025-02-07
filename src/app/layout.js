@@ -1,6 +1,5 @@
 import localFont from "next/font/local";
 import "./globals.css";
-import { Header } from './components/layout/header'
 import Footer from './components/layout/footer'
 import { helios } from "./fonts/fonts";
 
@@ -23,10 +22,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="ru">
-      <body
-        className={`${helios.className} antialiased bg-custom-white`}
-      >
-        {/* <Header /> */}
+      <body className={`${helios.className} antialiased bg-custom-white`}>
         <div className=''>
           {children}
         </div>

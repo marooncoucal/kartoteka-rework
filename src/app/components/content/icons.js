@@ -32,8 +32,8 @@ export function Logo() {
         <div className="Search w-[50x] h-[50px] flex justify-center items-center">
             <Image
                 src="/icons/logo_kartoteka.svg"
-                height={50}
-                width={50}
+                height={49}
+                width={49}
                 alt="cross icon"
             />
         </div>

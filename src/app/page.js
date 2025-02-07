@@ -11,23 +11,24 @@ export default async function Page2({ params, searchParams }) {
 
   // const router = useRouter() в онлклик роутер вставляет в поисковую строку фильтр запроса + запрос пользователя, который в юзСтэйте и валью= в инпуте
 
-  const searchTag = searchParams["tag"] //записывает в переменную тег после tag= из url ссылки
-  const search = searchParams["q"] //записывает в переменную запрос после search= из url ссылки
+  //записывает в переменную тег после tag= из url ссылки
+  const searchTag = searchParams["tag"]
+  //записывает в переменную запрос после search= из url ссылки
+  const search = searchParams["q"]
 
   //масив с карточками по запросу
   let filteredCards = [...cards]
-
 
   //для поиска по тегам
   if (searchTag) {
     filteredCards = [] //обнуляем массив
     for (let cardData of cards) { //для каждой карточки
-      //фикс все теги карточки
+      // фикс все теги карточки
       const tags = cardData.tags.map(tag => tag.name)
       searchTag.split(",").forEach(tag => {
         if (tags.includes(tag)) filteredCards.push(cardData)
       });
-      //если в тегах есть тег из серчТэг, то карточка в массив фильтрованных 
+      // если в тегах есть тег из серчТэг, то карточка в массив фильтрованных 
     }
   }
 
@@ -60,7 +61,6 @@ export default async function Page2({ params, searchParams }) {
         <HeroSearch inputTags={searchTag ? searchTag?.split(",") : []} />
       </div>
       <div className='Card-section w-full max-w-[1400px] px-[1rem] desktop:px-[0rem]'>
-        {/* <div className='Text font-custom font-uppercase font-bold py-[12px] text-[18px]'><p>Результаты  поиска</p></div> */}
         <CardList cards={filteredCards} />
       </div>
     </div>
