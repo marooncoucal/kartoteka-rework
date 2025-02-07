@@ -6,7 +6,7 @@ import Image from 'next/image';
 export function CardList({ cards }) {
     return (
         <div className='Collection-container w-full'>
-            <div className="Collection m-auto w-full columns-3xs xl:columns-3 gap-[20px]">
+            <div className="Collection m-auto w-full columns-sm gap-[20px]">
                 {
                     cards?.map(cardData => {
                         const card = cardData
@@ -14,7 +14,7 @@ export function CardList({ cards }) {
                         const thumb = card.thumb
                         const tagsData = card.tags
                         return (
-                            <div className="group Card" key={card.id}>
+                            <div className="group Card w-full min-w-[390px]" key={card.id}>
                                 <Link className="block" href={card.link ?? "#"} target="_blank">
                                     <div className="mb-[20px] flex flex-col overflow-hidden box-content">
                                         <div className="flex flex-row gap-[0px]">
