@@ -14,7 +14,7 @@ export function CardList({ cards }) {
                         const thumb = card.thumb
                         const tagsData = card.tags
                         return (
-                            <div className="group Card w-full min-w-[390px]" key={card.id}>
+                            <div className="group Card w-full min-w-[320px]" key={card.id}>
                                 <Link className="block" href={card.link ?? "#"} target="_blank">
                                     <div className="mb-[20px] flex flex-col overflow-hidden box-content">
                                         <div className="flex flex-row gap-[0px]">
