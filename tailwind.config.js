@@ -10,7 +10,7 @@ module.exports = {
       colors: {
         'custom-black': '#111111',
         'dark-grey': '#666666',
-        'custom-white': '#f0f0f0',
+        'custom-white': '#E6E6E6',
       },
       fontWeight: {
         thin: '100',

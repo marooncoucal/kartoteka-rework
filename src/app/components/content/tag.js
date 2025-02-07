@@ -17,13 +17,13 @@ export function Tag({ children, clickable = true, tags, setTags, tagColor }) {
     let bgc = '';
     switch (tagColor) {
         case 'для вдохновения':
-            bgc = 'bg-blue-500 text-white';
+            bgc = 'bg-[#4C4CFF] text-white';
             break;
         case 'для работы':
-            bgc = 'bg-red-500 text-white';
+            bgc = 'bg-[#FF5454] text-white';
             break;
         case 'для обучения':
-            bgc = 'bg-teal-500 text-white';
+            bgc = 'bg-[#00E086] text-white';
             break;
         default:
             bgc = 'bg-custom-white border-solid border-black border-[1px] text-black';
@@ -87,13 +87,13 @@ export function TopTag({ children, tagType, variant }) {
     let bgc = '';
     switch (tagType) {
         case 'для вдохновения':
-            bgc = 'bg-blue-500';
+            bgc = 'bg-[#4C4CFF] text-white';
             break;
         case 'для работы':
-            bgc = 'bg-red-500';
+            bgc = 'bg-[#FF5454] text-white';
             break;
         case 'для обучения':
-            bgc = 'bg-teal-500';
+            bgc = 'bg-[#00E086] text-white';
             break;
         default:
             bgc = '';

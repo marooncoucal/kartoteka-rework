@@ -6,7 +6,7 @@ import Image from 'next/image';
 export function CardList({ cards }) {
     return (
         <div className='Collection-container w-full'>
-            <div className="Collection m-auto w-full columns-sm gap-[20px]">
+            <div className="Collection m-auto w-full columns-sm gap-[20px] transition delay-150 duration-200 ease-in-out">
                 {
                     cards?.map(cardData => {
                         const card = cardData
