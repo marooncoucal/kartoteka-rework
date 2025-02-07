@@ -33,11 +33,10 @@ export function SearchBar({ tags }) {
     }, [val])
 
     return (
-        <div className="SearchBar relative w-full min-h-[50px] h-[50px] flex items-start justify-start gap-[12px] desktop:flex-nowrap desktop:w-[1400px] desktop:mx-auto">
-            <Link href={'/?q='} className='absolute 
-            translate-x-[0%] transition delay-150 duration-200 ease-in-out desktop:translate-x-[-160%] desktop:shrink-0
+        <div className="SearchBar relative w-full min-h-[50px] h-[50px] flex items-start justify-start gap-[12px] transition transition-[flex] transition-[width] transition-[margin] delay-50 duration-200 desktop:flex-nowrap desktop:w-[1400px] desktop:mx-auto">
+            <Link href={'/?q='} className='absolute translate-x-[0%] transition delay-50 duration-200 ease-in-out desktop:translate-x-[-160%] desktop:shrink-0
             '> <Logo /> </Link>
-            <div className="Search-Tags-cont bg-white h-[50px] w-[96%] ml-[70px] transition transition-[width] transition-[margin] delay-150 duration-200 ease-in-out delay-150 duration-200 ease-in-out desktop:w-[100%] desktop:ml-[0px]">
+            <div className="Search-Tags-cont bg-white h-[50px] w-[96%] ml-[70px] transition transition-[width] transition-[margin] delay-50 duration-200 ease-in-out delay-150 duration-200 ease-in-out desktop:w-[100%] desktop:ml-[0px]">
                 <div className="Search-input-cont w-full h-[50px] flex flex-row items-center pr-[8px]">
                     <div className="Txt-Area-cont 
                         w-full h-[50px] px-[16px] flex items-center">
