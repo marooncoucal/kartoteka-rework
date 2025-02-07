@@ -76,9 +76,9 @@ export function HeroSearch({ inputTags = [] }) {
             {
                 <div className='TagLines w-full flex flex-col gap-[12px] lg:gap-[18px] py-[3rem] md:py-[3rem] lg:py-[4rem]'>
                     <div className='w-full flex flex-wrap gap-[12px] lg:gap-[18px]'>
-                        <Tag tags={tags} setTags={setTags} tagColor={`для работы`}>для работы</Tag>
-                        <Tag tags={tags} setTags={setTags} tagColor={`для обучения`}>для обучения</Tag>
-                        <Tag tags={tags} setTags={setTags} tagColor={`для вдохновения`}>для вдохновения</Tag>
+                        <Tag tags={tags} setTags={setTags} tagColor={`работа`}>работа</Tag>
+                        <Tag tags={tags} setTags={setTags} tagColor={`обучение`}>обучение</Tag>
+                        <Tag tags={tags} setTags={setTags} tagColor={`вдохновение`}>вдохновение</Tag>
                     </div>
                     <div className='w-full flex flex-wrap gap-[12px] lg:gap-[18px]'>
                         <Tag tags={tags} setTags={setTags}>видео</Tag>

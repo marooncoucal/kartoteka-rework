@@ -16,13 +16,13 @@ export function Tag({ children, clickable = true, tags, setTags, tagColor }) {
 
     let bgc = '';
     switch (tagColor) {
-        case 'для вдохновения':
+        case 'вдохновение':
             bgc = 'bg-[#4C4CFF] text-white';
             break;
-        case 'для работы':
+        case 'работа':
             bgc = 'bg-[#FF5454] text-white';
             break;
-        case 'для обучения':
+        case 'обучение':
             bgc = 'bg-[#00E086] text-white';
             break;
         default:
@@ -86,13 +86,13 @@ export function BaseTag({ children }) {
 export function TopTag({ children, tagType, variant }) {
     let bgc = '';
     switch (tagType) {
-        case 'для вдохновения':
+        case 'вдохновение':
             bgc = 'bg-[#4C4CFF] text-white';
             break;
-        case 'для работы':
+        case 'работа':
             bgc = 'bg-[#FF5454] text-white';
             break;
-        case 'для обучения':
+        case 'обучение':
             bgc = 'bg-[#00E086] text-white';
             break;
         default:
@@ -110,7 +110,7 @@ export function TopTag({ children, tagType, variant }) {
 
                 ) : (
                     <div className={`
-                        pl-[16px] pr-[40px] pb-[2px] h-[30px] 
+                        pl-[16px] pr-[32px] pb-[2px] h-[30px] 
                         text-[16px] font-custom font-medium leading-none text-white
                         justify-center items-center flex gap-[0px]
                         ${bgc}`} style={{ clipPath: "polygon(0 0, calc(100% - 20%) 0, 100% 100%, 100% 100%, 0 100%)" }}>{children}</div>
