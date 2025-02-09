@@ -72,16 +72,29 @@ export function Tag({ children, clickable = true, tags, setTags, tagColor }) {
 export function BaseTag({ children }) {
     return (
         <div className="
-        leading-none text-[16px] font-custom text-black
-        px-[16px] pb-[2px] h-[30px]
-        justify-center items-center flex gap-[0px] 
+        leading-none text-[16px] font-custom text-[#808080]
+        pb-[2px] h-[30px]
+        justify-center items-center flex
         select-none cursor-pointer 
-        border-solid border-black border-[1px] 
         ">
-            <div className="Text text-[16px] font-custom font-medium leading-none">{children}</div>
+            <div className="Text text-[16px] font-custom font-medium leading-none">{'#' + children}</div>
         </div>
     )
 }
+
+// export function BaseTag({ children }) {
+//     return (
+//         <div className="
+//         leading-none text-[16px] font-custom text-black
+//         px-[16px] pb-[2px] h-[30px]
+//         justify-center items-center flex gap-[0px] 
+//         select-none cursor-pointer 
+//         border-solid border-black border-[1px] 
+//         ">
+//             <div className="Text text-[16px] font-custom font-medium leading-none">{children}</div>
+//         </div>
+//     )
+// }
 
 export function TopTag({ children, tagType, variant }) {
     let bgc = '';
