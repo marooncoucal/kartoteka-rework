@@ -22,14 +22,22 @@ export default async function Page2({ params, searchParams }) {
   //для поиска по тегам
   if (searchTag) {
     filteredCards = [] //обнуляем массив
+    let filteredCardsWithPriority = []
     for (let cardData of cards) { //для каждой карточки
       // фикс все теги карточки
       const tags = cardData.tags.map(tag => tag.name)
+      let tagCount = 0
       searchTag.split(",").forEach(tag => {
-        if (tags.includes(tag)) filteredCards.push(cardData)
+        if (tags.includes(tag)) {
+          tagCount++
+        }
       });
+      if (tagCount > 0) filteredCardsWithPriority.push({ card: cardData, priority: tagCount })
       // если в тегах есть тег из серчТэг, то карточка в массив фильтрованных 
     }
+    filteredCardsWithPriority.sort((c1, c2) => c2.priority - c1.priority)
+    filteredCards = filteredCardsWithPriority.map(c => c.card)
+
   }
 
   //для поиска по словам
@@ -54,6 +62,7 @@ export default async function Page2({ params, searchParams }) {
   }
 
   filteredCards = [...new Set(filteredCards)] //убирает дубликаты
+
 
   return (
     <div className="w-full pt-[2rem] flex flex-col justify-center items-center">

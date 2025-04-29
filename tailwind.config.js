@@ -25,6 +25,8 @@ module.exports = {
       },
       screens: {
         'desktop': '1580px',
+        '3cols': '1030px',
+        '2cols': '690px'
       },
     },
   },
