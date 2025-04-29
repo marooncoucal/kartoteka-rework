@@ -16,13 +16,13 @@ export function Tag({ children, clickable = true, tags, setTags, tagColor }) {
 
     let bgc = '';
     switch (tagColor) {
-        case 'вдохновение':
+        case 'для вдохновения':
             bgc = 'bg-[#4C4CFF] text-white';
             break;
-        case 'работа':
+        case 'для работы':
             bgc = 'bg-[#FF5454] text-white';
             break;
-        case 'обучение':
+        case 'для обучения':
             bgc = 'bg-[#00E086] text-white';
             break;
         default:
@@ -99,13 +99,13 @@ export function BaseTag({ children }) {
 export function TopTag({ children, tagType, variant }) {
     let bgc = '';
     switch (tagType) {
-        case 'вдохновение':
+        case 'для вдохновения':
             bgc = 'bg-[#4C4CFF] text-white';
             break;
-        case 'работа':
+        case 'для работы':
             bgc = 'bg-[#FF5454] text-white';
             break;
-        case 'обучение':
+        case 'для обучения':
             bgc = 'bg-[#00E086] text-white';
             break;
         default:

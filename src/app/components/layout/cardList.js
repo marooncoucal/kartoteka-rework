@@ -35,7 +35,7 @@ function CardListItem({ cardData }) {
                         {
                             tagsData?.map(tagData => {
                                 const tag = tagData
-                                const specialTags = ["работа", "вдохновение", "обучение"];
+                                const specialTags = ["для работы", "для вдохновения", "для обучения"];
                                 if (specialTags.includes(tag.name)) {
                                     return <TopTag key={tagData.id} tagType={tag.name}>{tag.name}</TopTag>;
                                 }
@@ -76,7 +76,7 @@ function CardListItem({ cardData }) {
                             {
                                 tagsData?.map(tagData => {
                                     const tag = tagData
-                                    const specialTags = ["работа", "вдохновение", "обучение"];
+                                    const specialTags = ["для работы", "для вдохновения", "для обучения"];
                                     if (!specialTags.includes(tag.name)) {
                                         return <BaseTag key={tagData.id}>{tag.name}</BaseTag>;
                                     }
