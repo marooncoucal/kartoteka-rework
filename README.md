@@ -90,22 +90,6 @@ If you encounter errors, try googling the solution and/or contact your teacher a
 | dark-grey | #666666 |
 | custom-white | #f0f0f0 |
 
-## Usage Examples
-
-```javascript
-export function BaseTag({ children }) {
-    return (
-        <div className="
-        px-[12px] py-[6px]
-        justify-center items-center flex select-none
-        border-solid border-black border-[1px] gap-[0px] text-black
-        ">
-            <div className="Text text-[16px] font-custom font-medium leading-none">{children}</div>
-        </div>
-    )
-}
-```
-
 ## Links
 
 Demo https://kartoteka.ibnd.ru/
