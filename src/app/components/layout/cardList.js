@@ -21,7 +21,7 @@ export function CardList({ cards }) {
 }
 
 
-function CardListItem({ cardData }) {
+export function CardListItem({ cardData }) {
     const card = cardData
     const thumb = card.thumb
     const tagsData = card.tags
@@ -31,8 +31,22 @@ function CardListItem({ cardData }) {
         <div className="group Card w-full min-w-[320px]">
             <Link className="block" href={card.link ?? "#"} target="_blank">
                 <div className="mb-[20px] flex flex-col overflow-hidden box-content">
-                    <div className="flex flex-row gap-[0px]">
+                    <div className="flex flex-row pr-[50px]">
                         {
+                            tagsData?.filter(tagData => {
+                                const specialTags = ["для работы", "для вдохновения", "для обучения"];
+                                return specialTags.includes(tagData.name);
+                            }).map((tagData, idx) => (
+                                <TopTag
+                                    key={tagData.id}
+                                    tagType={tagData.name}
+                                    marginNegative={idx !== 0 ? "6XS:-ml-[54px] 425w:-ml-[0px] 690w:-ml-[54px] 820w:-ml-[0px]" : ""}
+                                >
+                                    {tagData.name}
+                                </TopTag>
+                            ))
+                        }
+                        {/* {
                             tagsData?.map(tagData => {
                                 const tag = tagData
                                 const specialTags = ["для работы", "для вдохновения", "для обучения"];
@@ -41,21 +55,22 @@ function CardListItem({ cardData }) {
                                 }
                                 return null;
                             })
-                        }
+                        } */}
                     </div>
                     <div
                         className="h-full h-min-[290px] h-max-[560px] overflow-hidden"
                         style={{ clipPath: "polygon(0 0, calc(100% - 50px) 0, 100% 50px, 100% 100%, 0 100%)" }}
                     >
                         {
-                            thumb.mime.includes("video") ? <video
-                                src={CMS_URL + thumb.url}
-                                className="object-cover h-full h-min-[290px] h-max-[560px] w-full group-hover:scale-[1.16] duration-300"
-                                playsInline
-                                autoPlay
-                                muted
-                                loop
-                            />
+                            thumb.mime.includes("video")
+                                ? <video
+                                    src={CMS_URL + thumb.url}
+                                    className="object-cover h-full h-min-[290px] h-max-[560px] w-full group-hover:scale-[1.16] duration-300"
+                                    playsInline
+                                    autoPlay
+                                    muted
+                                    loop
+                                />
                                 :
                                 <Image
                                     src={CMS_URL + thumb.url}

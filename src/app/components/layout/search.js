@@ -38,7 +38,7 @@ export function SearchBar({ tags }) {
             translate-x-[0%] transition delay-150 duration-200 ease-in-out desktop:translate-x-[-160%] desktop:shrink-0
             '> <Logo /> </Link>
             <div className="Search-Tags-cont bg-white h-[50px] w-[96%] ml-[70px] transition transition-[width] transition-[margin] delay-150 duration-200 ease-in-out delay-150 duration-200 ease-in-out desktop:w-[100%] desktop:ml-[0px]">
-                <div className="Search-input-cont w-full h-[50px] flex flex-row items-center pr-[8px]">
+                <div className="Search-input-cont w-full h-[50px] flex flex-row items-center pr-[4px]">
                     <div className="Txt-Area-cont 
                         w-full h-[50px] px-[16px] flex items-center">
                         <textarea
@@ -58,6 +58,9 @@ export function SearchBar({ tags }) {
                         ></textarea>
                     </div>
                     <Link href={'/?q=' + val}> <SearchIcon /> </Link>
+                    <Link href={'/podborki'} className="w-[8%] min-w-[88px]">
+                        <div className='w-[100%] flex items-center justify-center'>подборки</div>
+                    </Link>
                 </div>
                 {/* здесь были теги, которые добавлялись в строку после фильтрации
                  <div className=''>

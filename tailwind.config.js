@@ -25,8 +25,13 @@ module.exports = {
       },
       screens: {
         'desktop': '1580px',
-        '3cols': '1030px',
-        '2cols': '690px'
+        '1400w': '1400px',
+        '3cols': '1210px',
+        '2cols': '690px',
+        "6XS": '150px',
+        "425w": '425px',
+        "690w": '690px',
+        "820w": '820px',
       },
     },
   },

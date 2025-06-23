@@ -5,16 +5,21 @@ import { CardList } from './components/layout/cardList';
 import { HeroSearch } from './components/layout/search';
 
 export default async function Page2({ params, searchParams }) {
+
+  const resolvedSearchParams = await searchParams;
+
   const data = await fetch(CMS_URL + "/api/kartochkas?populate=thumb&populate=tags", { cache: 'no-store' }); //no-store потом убрать, popultae for images thumb
   const json = await data.json()
   const cards = json.data
 
-  // const router = useRouter() в онлклик роутер вставляет в поисковую строку фильтр запроса + запрос пользователя, который в юзСтэйте и валью= в инпуте
+  // const router = useRouter() // в онлклик роутер вставляет в поисковую строку фильтр запроса + запрос пользователя, который в юзСтэйте и валью= в инпуте
 
   //записывает в переменную тег после tag= из url ссылки
-  const searchTag = searchParams["tag"]
+  // const searchTag = searchParams["tag"]
+  const searchTag = resolvedSearchParams["tag"];
   //записывает в переменную запрос после search= из url ссылки
-  const search = searchParams["q"]
+  // const search = searchParams["q"]
+  const search = resolvedSearchParams["q"];
 
   //масив с карточками по запросу
   let filteredCards = [...cards]
@@ -61,8 +66,7 @@ export default async function Page2({ params, searchParams }) {
     }
   }
 
-  filteredCards = [...new Set(filteredCards)] //убирает дубликаты
-
+  filteredCards = [...new Set(filteredCards)] // убирает дубликаты
 
   return (
     <div className="w-full pt-[2rem] flex flex-col justify-center items-center">

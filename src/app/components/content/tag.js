@@ -56,7 +56,7 @@ export function Tag({ children, clickable = true, tags, setTags, tagColor }) {
 
                 }
             }}>
-            <div className="Text text-[16px] leading-none">{children}</div>
+            <div className="Text text-[16px] leading-none whitespace-nowrap">{children}</div>
             <div className="Cross flex justify-center items-center">
                 {active && <Image
                     src="/icons/cross_desktop.svg"
@@ -77,7 +77,7 @@ export function BaseTag({ children }) {
         justify-center items-center flex
         select-none cursor-pointer 
         ">
-            <div className="Text text-[16px] font-custom font-medium leading-none">{'#' + children}</div>
+            <div className="Text text-[16px] font-custom font-medium leading-none whitespace-nowrap">{'#' + children}</div>
         </div>
     )
 }
@@ -96,7 +96,7 @@ export function BaseTag({ children }) {
 //     )
 // }
 
-export function TopTag({ children, tagType, variant }) {
+export function TopTag({ children, tagType, variant, marginNegative = "" }) {
     let bgc = '';
     switch (tagType) {
         case 'для вдохновения':
@@ -116,17 +116,17 @@ export function TopTag({ children, tagType, variant }) {
             {
                 variant === 2 ? (
                     <div className={`
-                        pl-[16px] pr-[40px] pb-[2px] h-[30px] 
-                        text-[16px] font-custom font-medium leading-none text-white
+                        pl-[16px] pr-[40px] pb-[2px] h-[30px]
+                        text-[16px] font-custom font-medium leading-none text-white whitespace-nowrap
                         justify-center items-center flex gap-[0px]
-                        ${bgc}`}>{children}</div>
+                        ${bgc} ${marginNegative}`}>{children}</div>
 
                 ) : (
                     <div className={`
-                        pl-[16px] pr-[32px] pb-[2px] h-[30px] 
-                        text-[16px] font-custom font-medium leading-none text-white
+                        pl-[16px] pr-[32px] pb-[2px] h-[30px]
+                        text-[16px] font-custom font-medium leading-none text-white whitespace-nowrap
                         justify-center items-center flex gap-[0px]
-                        ${bgc}`} style={{ clipPath: "polygon(0 0, calc(100% - 20%) 0, 100% 100%, 100% 100%, 0 100%)" }}>{children}</div>
+                        ${bgc} ${marginNegative}`} style={{ clipPath: "polygon(0 0, calc(100% - 20%) 0, 100% 100%, 100% 100%, 0 100%)" }}>{children}</div>
                 )
             }
         </div>
