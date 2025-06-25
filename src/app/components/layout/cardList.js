@@ -31,7 +31,7 @@ export function CardListItem({ cardData }) {
         <div className="group Card w-full min-w-[320px]">
             <Link className="block" href={card.link ?? "#"} target="_blank">
                 <div className="mb-[20px] flex flex-col overflow-hidden box-content">
-                    <div className="flex flex-row pr-[50px]">
+                    <div className="TopTagsContainer flex flex-row pr-[50px]">
                         {
                             tagsData?.filter(tagData => {
                                 const specialTags = ["для работы", "для вдохновения", "для обучения"];
@@ -57,8 +57,7 @@ export function CardListItem({ cardData }) {
                             })
                         } */}
                     </div>
-                    <div
-                        className="h-full h-min-[290px] h-max-[560px] overflow-hidden"
+                    <div className="ThumbContainer h-full h-min-[290px] h-max-[560px] overflow-hidden"
                         style={{ clipPath: "polygon(0 0, calc(100% - 50px) 0, 100% 50px, 100% 100%, 0 100%)" }}
                     >
                         {
@@ -82,12 +81,12 @@ export function CardListItem({ cardData }) {
                         }
 
                     </div>
-                    <div className="p-[20px] pb-[24px] bg-white flex flex-col gap-[20px]">
-                        <div className="flex flex-col gap-[16px]">
-                            <div className="font-custom text-black text-[22px] leading-none font-bold">{card.title} </div>
-                            <p className="font-custom font-light text-[20px] leading-snug text-black">{card.description}</p>
+                    <div className="CardInfoContainer p-[20px] pb-[24px] bg-white flex flex-col gap-[20px]">
+                        <div className="TitleDescContainer flex flex-col gap-[16px]">
+                            <div className="Title font-custom text-black text-[22px] leading-none font-bold">{card.title} </div>
+                            <p className="Description font-custom font-light text-[20px] leading-snug text-black">{card.description}</p>
                         </div>
-                        <div className="flex gap-[12px] flex-wrap">
+                        <div className="TagsContainer flex gap-[12px] flex-wrap">
                             {
                                 tagsData?.map(tagData => {
                                     const tag = tagData
