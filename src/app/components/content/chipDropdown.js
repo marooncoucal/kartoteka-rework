@@ -48,7 +48,7 @@ export default function ChipDrop({ children, clickable = true, items, selectedIt
                 </div>
             </div>
             {open && (
-                <div className="absolute left-0 top-full z-10 mt-2 min-w-full">
+                <div className="absolute left-0 top-full z-10 mt-2 min-w-full 690w:right-0 690w:left-auto">
                     {items?.map((item) => (
                         <div key={item} onClick={() => handleDropdownToggle(item)}>
                             <div className={

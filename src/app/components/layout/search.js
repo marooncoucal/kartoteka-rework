@@ -77,7 +77,7 @@ export function HeroSearch({ inputTags = [] }) {
         <div className='SearchBar-TagLines-cont w-full flex flex-col'>
             <SearchBar tags={tags} />
             {
-                <div className='TagLines w-full flex flex-col gap-[12px] lg:gap-[18px] py-[3rem] md:py-[3rem] lg:py-[4rem]'>
+                <div className='TagLines w-full flex flex-col gap-[12px] lg:gap-[18px] py-[3rem] md:py-[3rem] lg:py-[3rem]'>
                     <div className='w-full flex flex-wrap gap-[12px] lg:gap-[18px]'>
                         <Tag tags={tags} setTags={setTags} tagColor={'для работы'}>для работы</Tag>
                         <Tag tags={tags} setTags={setTags} tagColor={'для обучения'}>для обучения</Tag>
@@ -93,6 +93,7 @@ export function HeroSearch({ inputTags = [] }) {
                         <Tag tags={tags} setTags={setTags}>события</Tag>
                         <Tag tags={tags} setTags={setTags}>звук</Tag>
                         <Tag tags={tags} setTags={setTags}>литература</Tag>
+                        <Tag tags={tags} setTags={setTags}>медиа</Tag>
                         <Tag tags={tags} setTags={setTags}>медиа</Tag>
                     </div>
                 </div>
