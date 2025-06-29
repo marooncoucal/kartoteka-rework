@@ -41,7 +41,7 @@ export default function Podborki() {
                 bigHeader={'Подборка недели'}
                 bigHeaderDesc={'Подборка недели: свежий взгляд от тех, кто нас вдохновляет.'}
             />
-            <div className="AllRecsTextContainer flex flex-col mt-[6rem] w-full max-w-[1400px] px-[1rem] desktop:px-[0rem]">
+            <div className="AllRecsTextContainer gap-[12px] flex flex-col mt-[6rem] mb-[2rem] w-full max-w-[1400px] px-[1rem] desktop:px-[0rem]">
                 <div className="Text text-[32px] leading-[36px] text-black font-bold">Все авторские подборки</div>
                 <div className="Text text-[20px] leading-[24px]">Ищете, что почитать или посмотреть? Здесь все подборки от&#160;наших авторов.</div>
             </div>
