@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { BaseTag, TopTag } from "../content/tag";
 
-export default function RecomendedScroll({ variant, bigHeader, bigHeaderDesc, smallHeader, author, description, cardData }) {
+export default function RecomendedScroll({ variant, bigHeader, bigHeaderDesc, smallHeader, author, description, link, cardData }) {
 
     // открывашка описания к подборке
     const [openDescription, setOpenDescription] = useState(false);
@@ -109,7 +109,9 @@ export default function RecomendedScroll({ variant, bigHeader, bigHeaderDesc, sm
                             <div className="flex flex-col gap-[8px]">
                                 <div className="AuthorContainer flex flex-row gap-[6px]">
                                     <div className="text-black font-bold text-[18px] whitespace-nowrap">Автор подборки:</div>
-                                    <div className="Author text-black text-[18px] leading-[22px] underline">{author}</div>
+                                    <Link href={link ?? "#"}>
+                                        <div className="Author text-black text-[18px] leading-[22px] underline">{author}</div>
+                                    </Link>
                                 </div>
                                 <div onClick={() => setOpenDescription(!openDescription)}>
                                     {
