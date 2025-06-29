@@ -35,7 +35,7 @@ export function Tag({ children, clickable = true, tags, setTags, tagColor }) {
             px-[16px] pb-[2px] h-[30px]
             justify-center items-center flex 
             select-none cursor-pointer 
-            ${active ? `bg-black gap-[10px] text-white` : `${bgc} gap-[0px] `}
+            ${active ? `bg-black gap-[10px] text-white` : `${bgc} gap-[0px]`}
         `} onClick={() => {
                 //если можно кликнуть
                 if (clickable) {

@@ -156,7 +156,7 @@ function CardListScroll({ cards }) {
                                                     <TopTag
                                                         key={tagData}
                                                         tagType={tagData}
-                                                        marginNegative={idx !== 0 ? "6XS:-ml-[54px] 425w:-ml-[0px] 690w:-ml-[54px] 820w:-ml-[0px]" : ""}
+                                                        marginNegative={idx !== 0 ? "6XS:-ml-[64px] 425w:-ml-[14px] 690w:-ml-[14px] 820w:-ml-[0px]" : ""}
                                                     >
                                                         {tagData}
                                                     </TopTag>
