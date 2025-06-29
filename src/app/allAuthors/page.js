@@ -50,7 +50,7 @@ export default function AllAuthorsPage() {
             </div>
             <div className="AllRecsTextContainer flex flex-col gap-[4px] mt-[3rem] w-full max-w-[1400px] px-[1rem] desktop:px-[0rem]">
                 <div className="Text text-[32px] text-black font-bold">Авторы</div>
-                <div className="Text text-[20px] leading-[24px]"> Все авторы подборок&#160;– от&#160;профессионалов до&#160;студий</div>
+                <div className="Text text-[20px] leading-[24px]">Все авторы подборок&#160;– от&#160;профессионалов до&#160;студий</div>
             </div>
             <div className="Collection-container mt-[3rem] w-full max-w-[1400px] px-[1rem] desktop:px-[0rem] ">
                 <CardListAuthors cards={cardDataAuthors} />

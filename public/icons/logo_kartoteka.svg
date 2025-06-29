@@ -1,8 +1,12 @@
-<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M64 0H55.4655V64H64V0Z" fill="#1B1819"/>
-<path d="M8.53333 0H0V64H8.53333V0Z" fill="#1B1819"/>
-<path d="M64 55.6273V64H21.3333V55.4667L24.1665 55.4773L64 55.6273Z" fill="#1B1819"/>
-<path d="M64 0H0V8.53215H64L64 0Z" fill="#1B1819"/>
-<path d="M24 33.5763L3.13896 48.6477L0 44.3028V40.3769L8.53333 34.1487L24 22.9333V33.5763Z" fill="#1B1819"/>
-<path d="M28.589 58.6726L24.7396 64H21.3944L21.3333 63.9562L0.533335 48.9286L5.53008 42.0125L24.1665 55.4773L28.589 58.6726Z" fill="#1B1819"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 311.07 311.07">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #010101;
+        stroke-width: 0px;
+      }
+    </style>
+  </defs>
+  <path class="cls-1" d="m0,0v311.07h45v-83.36l83.36,83.36h182.71V0H0Zm266.07,266.07h-119.06l-45.4-45.4,64.11-64.1-31.85-31.8-88.86,88.86V45h221.07v221.07Z"/>
 </svg>
