@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image";
+// import ChevronDown from "./public/icons/arrow_down.svg"
 import { useEffect, useRef, useState } from "react";
 
 export default function ChipDrop({ children, clickable = true, items, selectedItem, onChanged }) {
@@ -8,18 +9,11 @@ export default function ChipDrop({ children, clickable = true, items, selectedIt
     const dropRef = useRef(null);
     useEffect(() => {
         function handleClickOutside(event) {
-            if (dropRef.current && !dropRef.current.contains(event.target)) {
-                setOpen(false);
-            }
+            if (dropRef.current && !dropRef.current.contains(event.target)) { setOpen(false); }
         }
-        if (open) {
-            document.addEventListener("mousedown", handleClickOutside);
-        } else {
-            document.removeEventListener("mousedown", handleClickOutside);
-        }
-        return () => {
-            document.removeEventListener("mousedown", handleClickOutside);
-        };
+        if (open) { document.addEventListener("mousedown", handleClickOutside); }
+        else { document.removeEventListener("mousedown", handleClickOutside); }
+        return () => { document.removeEventListener("mousedown", handleClickOutside); };
     }, [open]);
     const handleMainClick = () => setOpen((prev) => !prev);
     const handleDropdownToggle = (item) => {
@@ -40,6 +34,7 @@ export default function ChipDrop({ children, clickable = true, items, selectedIt
                 <div className="Text text-[16px] leading-none whitespace-nowrap">{children}</div>
                 <div className="mt-[4px]">
                     <Image
+                        // src={ChevronDown}
                         src="/icons/arrow_down.svg"
                         height={14}
                         width={14}
