@@ -28,6 +28,7 @@ export default function ChipDrop({ children, clickable = true, items, selectedIt
                     justify-between items-center flex gap-[8px]
                     select-none cursor-pointer
                     border-solid border-black border-[1px]
+                    
                     `}
                 onClick={handleMainClick}
             >
