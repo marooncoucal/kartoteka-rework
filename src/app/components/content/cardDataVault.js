@@ -1,3 +1,5 @@
+// for testing w/ cms
+
 export const cardData1 = [
     {
         id: 1,

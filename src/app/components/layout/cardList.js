@@ -20,7 +20,6 @@ export function CardList({ cards }) {
     )
 }
 
-
 export function CardListItem({ cardData }) {
     const card = cardData
     const thumb = card.thumb
