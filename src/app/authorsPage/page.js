@@ -11,14 +11,15 @@ import { CMS_URL } from "@/config";
 
 export default async function AuthorPage() {
 
-      const data = await fetch(CMS_URL + "/api/authors?populate=avatar&populate=designareas", { cache: 'no-store' }); //popultae for images avatar
-      const json = await data.json()
-      const authorsData = json.data
-
-      let authors = [...authorsData]
+    const data = await fetch(CMS_URL + "/api/authors?populate=avatar&populate=designareas", { cache: 'no-store' }); //popultae for images avatar
+    const json = await data.json()
+    const authorsData = json.data
+    let authors = [...authorsData]
 
     // const cardData = cardDataAuthors.find(card => card.id === 1);
-    const cardData = authorsData.find(card => card.id === 11); // id 11 12
+    const oneAuthorData = authorsData.find(card => card.id === 11); // id 11 12
+    const areasData = oneAuthorData.designareas
+    console.log(areasData)
     
     return (
         <div className="w-full pt-[2rem] flex flex-col justify-center items-center">
@@ -49,19 +50,27 @@ export default async function AuthorPage() {
                     <div className="ThumbContainer flex items-center h-[400px] w-full 3cols:max-w-[500px] aspect-[5/4] overflow-hidden">
                         {/* <Image src={cardData.image} alt="Алена Кукушкина" width={500} height={400} /> */}
                         <Image 
-                            src={CMS_URL + cardData.avatar.url} 
+                            src={CMS_URL + oneAuthorData.avatar.url} 
                             alt="Алена Кукушкина" 
                             width={500} height={400}
                         />
                     </div>
                     <div className="CardInfoContainer flex flex-row gap-[20px]">
+                        {
+                            areasData?.map(area => {
+                                // console.log(area)
+                                    return <BaseTag key={area.id}>{area.name}</BaseTag>;  
+                                    // key prop in React map is set to the whole area object
+                                    // converts to the string "[object Object]" - duplicate keys
+                            })
+                        }
                         {/* <BaseTag>{cardData.tags[0]}</BaseTag> */}
                         {/* <BaseTag>{cardData.tags[1]}</BaseTag> */}
                     </div>
                 </div>
                 <div className="flex flex-col gap-[4px] w-full max-w-[766px]">
-                    <div className="Text text-[32px] text-black font-bold">{cardData.title}</div>
-                    <div className="Text text-[20px] leading-[24px]">{cardData.description}</div>
+                    <div className="Text text-[32px] text-black font-bold">{oneAuthorData.title}</div>
+                    <div className="Text text-[20px] leading-[24px]">{oneAuthorData.description}</div>
                 </div>
             </div>
             <div className="AllRecsTextContainer flex flex-col gap-[4px] mt-[6rem] w-full max-w-[1400px] px-[1rem] desktop:px-[0rem]">

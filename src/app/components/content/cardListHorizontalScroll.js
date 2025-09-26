@@ -1,8 +1,5 @@
-"use client"
-
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
 import { BaseTag, TopTag } from "../content/tag";
 
 export function CardListScroll({ cards }) {
@@ -57,7 +54,7 @@ export function CardListScroll({ cards }) {
                                                         if (!specialTags.includes(tag)) {
                                                             return <BaseTag key={tag}>{tag}</BaseTag>;
                                                         }
-                                                        return null;
+                                                        // return null; //not render specialTags
                                                     })
                                                 }
                                             </div>

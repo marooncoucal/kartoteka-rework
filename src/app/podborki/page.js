@@ -6,6 +6,7 @@ import { Suspense, useState } from "react";
 import ChipDrop from "../components/content/chipDropdown";
 import { cardData1, cardData2, cardData3 } from "../components/content/cardDataVault";
 import Link from "next/link";
+import WeekRecomendedScroll from "../components/layout/weekRecomendedScroll";
 
 export default function Podborki() {
     const [selectedItem1, setSelectedItem1] = useState("все сферы");
@@ -36,8 +37,7 @@ export default function Podborki() {
                     </div>
                 </div>
             </div>
-            <RecomendedScroll cardData={cardData1}
-                variant={2}
+            <WeekRecomendedScroll cardData={cardData1}
                 bigHeader={'Подборка недели'}
                 bigHeaderDesc={'Подборка недели: свежий взгляд от тех, кто нас вдохновляет.'}
             />

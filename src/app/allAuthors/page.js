@@ -72,7 +72,8 @@ function CardListAuthors({ cards }) {
             {
                 cards?.map(cardData => {
                     const card = cardData
-                    // const areasData = card.author.designareas
+                    // console.log(card.designareas)
+                    const areasData = card.designareas
                     return (
                         <div className="groupCard min-w-[320px] w-full 690w:flex-1 690w:max-w-[400px]" key={card.id}>
                             <Link className="block" href={card.link ?? "#"} >
@@ -95,12 +96,14 @@ function CardListAuthors({ cards }) {
                                             <p className="Description font-custom font-light text-[20px] leading-snug text-black">{card.description}</p>
                                         </div>
                                         <div className="TagsContainer flex gap-[12px] flex-wrap">
-                                            {/* {
+                                            {
                                                 areasData?.map(area => {
-                                                    console.log(<BaseTag key={area}>{area}</BaseTag>)
-                                                        return <BaseTag key={area}>{area}</BaseTag>;  
+                                                    // console.log(area)
+                                                        return <BaseTag key={area.id}>{area.name}</BaseTag>;  
+                                                        // key prop in React map is set to the whole area object
+                                                        // converts to the string "[object Object]" - duplicate keys
                                                 })
-                                            } */}
+                                            }
                                         </div>
                                     </div>
                                 </div>
