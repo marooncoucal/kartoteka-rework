@@ -102,6 +102,7 @@ function CardListAuthors({ cards }) {
                                                         return <BaseTag key={area.id}>{area.name}</BaseTag>;  
                                                         // key prop in React map is set to the whole area object
                                                         // converts to the string "[object Object]" - duplicate keys
+                                                        // need to specify id and name
                                                 })
                                             }
                                         </div>

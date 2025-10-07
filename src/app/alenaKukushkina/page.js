@@ -4,8 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { BaseTag } from "../components/content/tag";
 import { cardDataAuthors } from '../allAuthors/page';
-import RecomendedScroll from "../components/layout/recomenedeScroll";
 import { cardData2 } from "../components/content/cardDataVault";
+import AuthorRecomendedScroll from "../components/layout/authorRecomendedScroll";
 
 export default function AuthorPageAlena() {
     const cardData = cardDataAuthors.find(card => card.id === 1);
@@ -51,9 +51,9 @@ export default function AuthorPageAlena() {
             <div className="AllRecsTextContainer flex flex-col gap-[4px] mt-[6rem] w-full max-w-[1400px] px-[1rem] desktop:px-[0rem]">
                 <div className="Text text-[32px] text-black font-bold">Подборки автора</div>
             </div>
-            <RecomendedScroll cardData={cardData2}
+            <AuthorRecomendedScroll cardData={cardData2}
                 link={`/alenaKukushkina`}
-                smallHeader={'Убедительная презентация — топ 10 книг по мнению Алёны Кукушкиной'}
+                header={'Убедительная презентация — топ 10 книг по мнению Алёны Кукушкиной'}
                 author={'Алёна Кукушкина, куратор креативных проектов, продюсер, консультант в области бизнес-коммуникации и искусства презентации'}
                 description={` Убедительная презентация — это не только красивые слайды и чёткая речь, но и умение вести диалог, отвечать на вопросы, чувствовать аудиторию и адаптироваться к её запросам. Именно здесь пересекаются мастерство презентации и переговорные техники. Ведь каждая презентация — это, по сути, переговоры: вы “продаёте” идею, проект или продукт, а ваша задача — сделать так, чтобы аудитория не просто услышала, но и приняла вашу точку зрения. Поэтому глубокое понимание переговорных стратегий — это неотъемлемая часть успеха в коммуникации. Предлагаю вашему вниманию книги, которые сочетают глубокую теоретическую базу с практической применимостью. Каждая из них предлагает уникальный взгляд на переговоры, подкреплённый исследованиями, кейсами и стратегиями, которые можно использовать в реальной жизни.`}
             />

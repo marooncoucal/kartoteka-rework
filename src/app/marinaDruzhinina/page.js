@@ -4,8 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { BaseTag } from "../components/content/tag";
 import { cardDataAuthors } from '../allAuthors/page';
-import RecomendedScroll from "../components/layout/recomenedeScroll";
 import { cardData3 } from "../components/content/cardDataVault";
+import AuthorRecomendedScroll from "../components/layout/authorRecomendedScroll";
 
 export default function AuthorPageMarina() {
     const cardData = cardDataAuthors.find(card => card.id === 2);
@@ -51,9 +51,9 @@ export default function AuthorPageMarina() {
             <div className="AllRecsTextContainer flex flex-col gap-[4px] mt-[6rem] w-full max-w-[1400px] px-[1rem] desktop:px-[0rem]">
                 <div className="Text text-[32px] text-black font-bold">Подборки автора</div>
             </div>
-            <RecomendedScroll cardData={cardData3}
+            <AuthorRecomendedScroll cardData={cardData3}
                 link={`/marinaDruzhinina`}
-                smallHeader={'Подборка дизайн студий от Марии Дружининой'}
+                header={'Подборка дизайн студий от Марии Дружининой'}
                 author={'Мария Дружинина. Член Союза Дизайнеров России. Ведущий графический дизайнер студии «Паратайп» '}
                 description={`В современном мире дизайна важно быть в курсе последних трендов и вдохновения. Мария собрала подборку сайтов студий и дизайнеров, которые задают тон в индустрии и могут стать отличным источником идей и мотивации для студентов. `}
             />

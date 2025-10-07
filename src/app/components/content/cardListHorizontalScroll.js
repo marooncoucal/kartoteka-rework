@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { BaseTag, TopTag } from "../content/tag";
+import { CMS_URL } from "@/config";
 
 export function CardListScroll({ cards }) {
     return (
@@ -9,7 +10,7 @@ export function CardListScroll({ cards }) {
                 {
                     cards?.map(cardData => {
                         const card = cardData
-                        const thumb = card.image
+                        const thumb = card.thumb
                         const tagsData = card.tags
                         return (
                             <div className="groupCard 820w:w-[453px] 425w:w-[360px] w-[310px]" key={card.id}>
@@ -17,16 +18,16 @@ export function CardListScroll({ cards }) {
                                     <div className="mb-[20px] flex flex-col overflow-hidden box-content">
                                         <div className="TopTagsContainer flex flex-row pr-[50px]">
                                             {
-                                                tagsData?.filter(tagData => {
+                                                tagsData?.filter(tag => {
                                                     const specialTags = ["для работы", "для вдохновения", "для обучения"];
-                                                    return specialTags.includes(tagData);
-                                                }).map((tagData, idx) => (
+                                                    return specialTags.includes(tag);
+                                                }).map((tag, idx) => (
                                                     <TopTag
-                                                        key={tagData}
-                                                        tagType={tagData}
+                                                        key={tag}
+                                                        tagType={tag}
                                                         marginNegative={idx !== 0 ? "6XS:-ml-[64px] 425w:-ml-[14px] 690w:-ml-[14px] 820w:-ml-[0px]" : ""}
                                                     >
-                                                        {tagData}
+                                                        {tag}
                                                     </TopTag>
                                                 ))
                                             }
@@ -36,6 +37,7 @@ export function CardListScroll({ cards }) {
                                         >
                                             <Image
                                                 src={thumb}
+                                                // src={CMS_URL + thumb.url}
                                                 width={500}
                                                 height={500}
                                                 alt={card.title}
