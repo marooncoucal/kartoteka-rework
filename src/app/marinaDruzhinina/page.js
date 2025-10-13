@@ -51,12 +51,12 @@ export default function AuthorPageMarina() {
             <div className="AllRecsTextContainer flex flex-col gap-[4px] mt-[6rem] w-full max-w-[1400px] px-[1rem] desktop:px-[0rem]">
                 <div className="Text text-[32px] text-black font-bold">Подборки автора</div>
             </div>
-            <AuthorRecomendedScroll cardData={cardData3}
+            {/* <AuthorRecomendedScroll cardData={cardData3}
                 link={`/marinaDruzhinina`}
                 header={'Подборка дизайн студий от Марии Дружининой'}
                 author={'Мария Дружинина. Член Союза Дизайнеров России. Ведущий графический дизайнер студии «Паратайп» '}
                 description={`В современном мире дизайна важно быть в курсе последних трендов и вдохновения. Мария собрала подборку сайтов студий и дизайнеров, которые задают тон в индустрии и могут стать отличным источником идей и мотивации для студентов. `}
-            />
+            /> */}
         </div>
     );
 }
