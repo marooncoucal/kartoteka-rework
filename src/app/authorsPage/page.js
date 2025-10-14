@@ -9,12 +9,16 @@ import { CMS_URL } from "@/config";
 import AuthorRecomendedScroll from "../components/layout/authorRecomendedScroll";
 import { RecomendedList } from "../components/layout/recomendedList";
 
-export default async function AuthorPage() {
+export default async function AuthorsPage() {
 
-    // one author testing
+  // local AK - jklic5ivyu3fovxsw2ffm282
+  // server AK - pdscdzfyq2ydxdog0eet5yad
+  // server MD - l59fpyrpy4pf51d5dim2oz58
+
+  // one author testing
   const authors1data = await fetch(
     CMS_URL +
-      "/api/authors?filters[documentId][$eq]=pdscdzfyq2ydxdog0eet5yad&populate[avatar]=true&populate[designareas]=true",
+      "/api/authors?filters[documentId][$eq]=jklic5ivyu3fovxsw2ffm282&populate[avatar]=true&populate[designareas]=true",
     { cache: "no-store" }
   );
   const json1author = await authors1data.json();
@@ -24,8 +28,7 @@ export default async function AuthorPage() {
   const areasData = oneAuthorData.designareas
 //   console.log(areasData);
   const oneAuthorId = oneAuthorData.documentId
-  console.log(oneAuthorData.documentId);
-//   l59fpyrpy4pf51d5dim2oz58
+  // console.log(oneAuthorData.documentId);
 
   const podborkasData = await fetch( CMS_URL + `/api/podborkas?filters[authors][documentId][$eq]=${oneAuthorId}&populate[authors][populate][avatar]=true&populate[kartochkas][populate][thumb]=true&populate[kartochkas][populate][tags]=true`, { cache: "no-store" } );
   const json = await podborkasData.json();
