@@ -4,7 +4,7 @@ import { Suspense } from "react";
 import { SearchBar } from "../components/layout/search";
 import { BaseTag, TopTag } from "../components/content/tag";
 
-import { CMS_URL } from "@/config";
+import { CMS_URL, Page_Url } from "@/config";
 
 export const cardDataAuthors = [
     {
@@ -25,7 +25,7 @@ export const cardDataAuthors = [
     },
 ]
 
-const data = await fetch(CMS_URL + "/api/authors?populate=avatar&populate=designareas", { cache: 'no-store' }); // popultae for images avatar
+const data = await fetch(CMS_URL + "/api/authors?populate[avatar]=true&populate[designareas]=true", { cache: 'no-store' });
 const json = await data.json()
 const authorsData = json.data
 
@@ -67,6 +67,7 @@ export default async function AllAuthorsPage() {
 }
 
 function CardListAuthors({ cards }) {
+    // const Page_Url = 'http://localhost:3000'
     return (
         <div className='flex flex-row flex-wrap gap-[20px] columns-3xs md:columns-md'>
             {
@@ -74,9 +75,11 @@ function CardListAuthors({ cards }) {
                     const card = cardData
                     // console.log(card.designareas)
                     const areasData = card.designareas
+                    const cardLink = Page_Url + '/authorPage/' + card.slug
+                    // console.log(cardLink)
                     return (
                         <div className="groupCard min-w-[320px] w-full 690w:flex-1 690w:max-w-[400px]" key={card.id}>
-                            <Link className="block" href={card.link ?? "#"} >
+                            <Link className="block" href={cardLink ?? "#"} passHref={true}>
                                 <div className="mb-[20px] flex flex-col overflow-hidden box-content w-full">
                                     <div className="AvatarContainer h-full h-min-[290px] h-max-[400px] aspect-square overflow-hidden"
                                     // style={{ clipPath: "polygon(0 0, calc(100% - 50px) 0, 100% 50px, 100% 100%, 0 100%)" }}

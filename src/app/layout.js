@@ -2,6 +2,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Footer from './components/layout/footer'
 import { helios } from "./fonts/fonts";
+import AuthorPageSlug from "./authorPage/[slug]/page";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
