@@ -3,6 +3,7 @@ import "./globals.css";
 import Footer from './components/layout/footer'
 import { helios } from "./fonts/fonts";
 import AuthorPageSlug from "./authorPage/[slug]/page";
+import { Header } from "./components/layout/header";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -27,6 +28,7 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
       <body className={`${helios.className} antialiased bg-custom-white`}>
+        {/* <Header /> */}
         <div className=''>
           {children}
         </div>

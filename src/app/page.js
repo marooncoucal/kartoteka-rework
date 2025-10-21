@@ -71,7 +71,7 @@ export default async function Page2({ params, searchParams }) {
   return (
     <div className="w-full pt-[2rem] flex flex-col justify-center items-center">
       <div className='w-full max-w-[1400px] flex flex-col justify-center items-center px-[1rem] desktop:px-[0rem]'>
-        <HeroSearch inputTags={searchTag ? searchTag?.split(",") : []} />
+        <HeroSearch isTagsVisible={true} inputTags={searchTag ? searchTag?.split(",") : []} />
       </div>
       <div className='Card-section w-full max-w-[1400px] pt-[1rem] px-[1rem] desktop:px-[0rem]'>
         <CardList cards={filteredCards} />

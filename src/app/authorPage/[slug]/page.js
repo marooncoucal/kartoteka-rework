@@ -1,93 +1,44 @@
+import ButtonRect from "@/app/components/content/atoms/buttonRect";
 import { BaseTag } from "@/app/components/content/tag";
 import { RecomendedList } from "@/app/components/layout/recomendedList";
-import { SearchBar } from "@/app/components/layout/search";
+import { HeroSearch } from "@/app/components/layout/search";
 import { CMS_URL } from "@/config";
 import Image from "next/image";
-import Link from "next/link";
-import { Suspense } from "react";
 
 
 export default async function AuthorsPageSlug({params}) {
-
-// console.log((await params).slug)
-
-// CMS URL local - "http://localhost:1337"
-// CMS URL server - "https://kartotekacms.ibnd.ru"
-// local [documentId] - jklic5ivyu3fovxsw2ffm282
-// server [documentId] - pdscdzfyq2ydxdog0eet5yad
-// alenaKukushkina
-// mariaDruzhinina
-const authorDocID = "pdscdzfyq2ydxdog0eet5yad";
-// const authorSlug = 'alenaKukushkina'
 const authorSlug = (await params).slug
 
-// one author testing
+// one author
 const authors1data = await fetch(
   CMS_URL +
     `/api/authors?filters[slug][$eq]=${authorSlug}&populate[avatar]=true&populate[designareas]=true`,
-    // `/api/authors?filters[documentId][$eq]=${authorDocID}&populate[avatar]=true&populate[designareas]=true`,
   { cache: "no-store" }
 );
 const json1author = await authors1data.json();
 const oneAuthorData = json1author.data[0];
-const areasData = oneAuthorData.designareas; // comment when allAuthorsData?.map((author) => {...
-const oneAuthorId = oneAuthorData.documentId;
+const areasData = oneAuthorData.designareas;
 const oneAuthorSlug = oneAuthorData.slug;
-// console.log(oneAuthorSlug)
 
-// one author podborka testing
+// one author podborka
 const podborkasData = await fetch(
   CMS_URL +
     `/api/podborkas?filters[authors][slug][$eq]=${oneAuthorSlug}&populate[authors][populate][avatar]=true&populate[kartochkas][populate][thumb]=true&populate[kartochkas][populate][tags]=true`,
-    // `/api/podborkas?filters[authors][documentId][$eq]=${oneAuthorId}&populate[authors][populate][avatar]=true&populate[kartochkas][populate][thumb]=true&populate[kartochkas][populate][tags]=true`,
   { cache: "no-store" }
 );
 const json2 = await podborkasData.json();
 const podborkas1 = json2.data;
 
-// old local test
-// const oneAuthorData = authorsData.find(card => card.id === 13); // id 11 12
-// const cardData = cardDataAuthors.find(card => card.id === 1);
-
   return (
-    <div className="w-full pt-[2rem] flex flex-col justify-center items-center">
-      <div className="TopContainer w-full max-w-[1400px] px-[1rem] desktop:px-[0rem] gap-[3rem] flex flex-col">
-        <div className="select-none">
-          <Suspense
-            fallback={
-              <div className="flex justify-center items-center h-[100px]">
-                Загрузка...
-              </div>
-            }
-          >
-            <SearchBar />
-          </Suspense>
-        </div>
-        <div className="flex flex-col gap-[16px] 690w:flex-row 690w:justify-between">
-          <Link href="/authorPage">
-            <div
-              className={`flex items-center justify-center gap-[4px] pb-[2px] h-[30px] px-[16px] max-w-[120px] mt-[-1px] border-solid border-black border-[1px] bg-custom-white select-none`}
-            >
-              <div className="mt-[1.6px]">
-                <Image
-                  src="/icons/arrow_left.svg"
-                  height={12}
-                  width={12}
-                  alt="arrow left icon"
-                />
-              </div>
-              <div className="Text text-[16px] leading-none whitespace-nowrap">
-                обратно
-              </div>
-            </div>
-          </Link>
-        </div>
+    <div className="w-full flex flex-col justify-center items-center">
+      <div className="TopContainer w-full max-w-[1400px] pt-[2rem] px-[1rem] desktop:px-[0rem] gap-[3rem] flex flex-col">
+        <HeroSearch />
+        <ButtonRect link={'/authorPage'} text={'обратно'} arrowLeft={true} />
       </div>
-      <div className='AuthorPageContainer '>
-        <div className="flex flex-col 820w:flex-row gap-[16px] 820w:gap-[64px] 3cols:gap-[128px] justify-between mt-[3rem] w-full max-w-[1400px] px-[1rem] desktop:px-[0rem]">
+      <div className='AuthorPageContainer w-full max-w-[1400px] px-[1rem] desktop:px-[0rem]'>
+        <div className="flex flex-col 820w:flex-row gap-[16px] 820w:gap-[64px] 3cols:gap-[128px] justify-between mt-[3rem] w-full max-w-[1400px]">
           <div className="flex flex-col gap-[8px]">
             <div className="ThumbContainer flex items-center h-[400px] w-full 3cols:max-w-[500px] aspect-[5/4] overflow-hidden">
-              {/* <Image src={cardData.image} alt="Алена Кукушкина" width={500} height={400} /> */}
               <Image
                 src={CMS_URL + oneAuthorData.avatar.url}
                 alt="Алена Кукушкина"
@@ -97,10 +48,7 @@ const podborkas1 = json2.data;
             </div>
             <div className="CardInfoContainer flex flex-row gap-[20px]">
               {areasData?.map((area) => {
-                // console.log(area)
                 return <BaseTag key={area.id}>{area.name}</BaseTag>;
-                // key prop in React map is set to the whole area object
-                // converts to the string "[object Object]" - duplicate keys
               })}
             </div>
           </div>
@@ -113,7 +61,7 @@ const podborkas1 = json2.data;
             </div>
           </div>
         </div>
-        <div className="AllRecsTextContainer flex flex-col gap-[4px] mt-[6rem] w-full max-w-[1400px] px-[1rem] desktop:px-[0rem]">
+        <div className="AllRecsTextContainer flex flex-col gap-[4px] mt-[6rem] w-full max-w-[1400px]">
           <div className="Text text-[32px] text-black font-bold">
             Подборки автора
           </div>
