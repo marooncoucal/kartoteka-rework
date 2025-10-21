@@ -7,11 +7,8 @@ A collection of helpful links for designers and an experimental project of B&D i
 ## Table of Contents
 
 - [Run Locally](#run-locally)
-- [Updating code on server](#updating-code-on-server)
-- [API Reference](#api-reference)
-- [Usage Examples](#usage-examples)
 - [Links](#links)
-- [Authors](#authors)
+- [Acknowledgements](#acknowledgements)
 
 ## Run Locally
 
@@ -45,62 +42,11 @@ Make sure to `create a new branch` for your tasks
 
 After finishing, `commit` changes for review
 
-## Updating code on server
-
-Install [FileZilla FTP Client](https://filezilla-project.org/download.php?type=client).
-Use [FileZilla Documentation](https://wiki.filezilla-project.org/Using) to navigate the programm.
-
-To update this project you will need access to server. Contact your teacher or administrator for permission. After you are connected, you can proceed with next steps
-
-connect to server via "Менеджер сайтов" icon under programm logo
-
-![Connect to server](https://github.com/marooncoucal/kartoteka-rework/blob/master/README-img/connect-filezilla.png)
-
-Transfer files from local folder to server folder
-
-![filezilla-window-example](https://github.com/marooncoucal/kartoteka-rework/blob/master/README-img/filezilla-window-example.png)
-
-After transfering updated files, connect to server via `cmd` on your computer
-
-```bash
-  ssh your_folder@site_name
-  password: your_assigned_password
-```
-
-Make sure to be in the correct folder before starting update. Use `cd` to move down and `..` to move up through folders.
-
-After moving to correct folder rebuild and restart server:
-
-```bash
-  npm run build
-
-  pm2 restart kartoteka
-```
-
-If you encounter errors, try googling the solution and/or contact your teacher and administrator
-
-## API Reference
-
-
-### Color Reference
-
-| Color             | Hex                                                                |
-| ----------------- | ------------------------------------------------------------------ |
-| custom-black | #111111 |
-| dark-grey | #666666 |
-| custom-white | #f0f0f0 |
-
 ## Links
 
 Demo https://kartoteka.ibnd.ru/
 
 CMS https://kartotekacms.ibnd.ru/
-
-## Authors
-
-- [@marooncoucal](https://www.behance.net/marooncoucal)
-- [@ekaterisalovar](https://www.behance.net/ekaterisalovar)
-
 
 ## Acknowledgements
  - [Next.js](https://nextjs.org/)
@@ -109,3 +55,5 @@ CMS https://kartotekacms.ibnd.ru/
  - [Борис Маркевич](https://www.behance.net/borismarkevichf685)
  - [Игорь Мелехов](https://obe.ru/teacher/melehov-igor-sergeevich/)
  - [Татьяна Михалина](https://obe.ru/teacher/mihalina-tatyana-nikolaevna-2/)
+ - [@marooncoucal](https://www.behance.net/marooncoucal)
+ - [@ekaterisalovar](https://www.behance.net/ekaterisalovar)
