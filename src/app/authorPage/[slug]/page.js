@@ -49,7 +49,6 @@ const podborkas1 = json2.data;
 // const oneAuthorData = authorsData.find(card => card.id === 13); // id 11 12
 // const cardData = cardDataAuthors.find(card => card.id === 1);
 
-
   return (
     <div className="w-full pt-[2rem] flex flex-col justify-center items-center">
       <div className="TopContainer w-full max-w-[1400px] px-[1rem] desktop:px-[0rem] gap-[3rem] flex flex-col">
@@ -65,7 +64,7 @@ const podborkas1 = json2.data;
           </Suspense>
         </div>
         <div className="flex flex-col gap-[16px] 690w:flex-row 690w:justify-between">
-          <Link href="/allAuthors">
+          <Link href="/authorPage">
             <div
               className={`flex items-center justify-center gap-[4px] pb-[2px] h-[30px] px-[16px] max-w-[120px] mt-[-1px] border-solid border-black border-[1px] bg-custom-white select-none`}
             >

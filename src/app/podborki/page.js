@@ -53,7 +53,7 @@ export default async function Podborki() {
           </Suspense>
         </div>
         <div className="flex flex-col gap-[16px] 690w:flex-row 690w:justify-between">
-          <Link href="/allAuthors">
+          <Link href="/authorPage">
             <div
               className={`flex items-center px-[16px] pb-[2px] h-[30px] max-w-[120px] mt-[-1px] border-solid border-black border-[1px] bg-custom-white select-none`}
             >

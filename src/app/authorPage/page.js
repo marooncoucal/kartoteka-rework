@@ -6,25 +6,6 @@ import { BaseTag, TopTag } from "../components/content/tag";
 
 import { CMS_URL, Page_Url } from "@/config";
 
-export const cardDataAuthors = [
-    {
-        id: 1,
-        link: '/alenaKukushkina',
-        image: '/img/alenaKukushkina/portrait2.jpg',
-        title: `Алена Кукушкина`,
-        description: 'Алёна Кукушкина, куратор креативных проектов, продюсер, консультант в области бизнес-коммуникации и искусства презентации, автор курсов «Публичные выступления», «Визуальный сторителлинг», «Управление в сфере современного искусства» в Институте бизнеса и дизайна B&D.',
-        tags: [`моушен-дизайн`, `продюсирование`]
-    },
-    {
-        id: 2,
-        link: '/marinaDruzhinina',
-        image: '/img/druzhinina/portrait1.jpg',
-        title: `Мария Дружинина`,
-        description: 'Преподаватель дисциплин «Шрифт», «Типографика». Графический дизайнер и иллюстратор. Член Союза Дизайнеров России. Ведущий графический дизайнер студии «Паратайп».',
-        tags: [`графический дизайн`, `иллюстрация`]
-    },
-]
-
 const data = await fetch(CMS_URL + "/api/authors?populate[avatar]=true&populate[designareas]=true", { cache: 'no-store' });
 const json = await data.json()
 const authorsData = json.data
